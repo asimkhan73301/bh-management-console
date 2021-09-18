@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  position: relative;
+}
+.button__global_dialog_open:global(.__wab_instance) {
+  display: none;
+}
+.button__isOpen:global(.__wab_instance) {
+  display: none;
+}
+.dialogBoxWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.muiDialog:global(.__wab_instance) {
+  position: relative;
+}

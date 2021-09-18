@@ -1,5 +1,136 @@
 {
-  "props": [],
+  "props": [
+    {
+      "name": "Background",
+      "type": "color",
+      "value": "#FFFFFF",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "cxDJHMhEw"
+      }
+    },
+    {
+      "name": "Border",
+      "type": "color",
+      "value": "#F3F3F3",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "Y3QfKe8SC"
+      }
+    },
+    {
+      "name": "PrimaryContrast",
+      "type": "color",
+      "value": "#FFFFFF",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "nH8lH7QPz"
+      }
+    },
+    {
+      "name": "PrimaryDark",
+      "type": "color",
+      "value": "#000462",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "TZl1E9yvq"
+      }
+    },
+    {
+      "name": "PrimaryLight",
+      "type": "color",
+      "value": "#3950AE",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "9Jx6sgv6X"
+      }
+    },
+    {
+      "name": "PrimaryLightTenPercent",
+      "type": "color",
+      "value": "#3950AE1A",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "qXrq6c7hE"
+      }
+    },
+    {
+      "name": "PrimaryMain",
+      "type": "color",
+      "value": "#061D7B",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "HNlv0A0HQ"
+      }
+    },
+    {
+      "name": "SecondaryContrast",
+      "type": "color",
+      "value": "#061D7B",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "K1sbhgWfi"
+      }
+    },
+    {
+      "name": "SecondaryDark",
+      "type": "color",
+      "value": "#CBB900",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "M8LC8kFaq"
+      }
+    },
+    {
+      "name": "SecondaryLight",
+      "type": "color",
+      "value": "#FFFF79",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "R3EbZgGlA"
+      }
+    },
+    {
+      "name": "SecondaryMain",
+      "type": "color",
+      "value": "#FEEC13",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "Y1azicouK"
+      }
+    },
+    {
+      "name": "TextPrimary",
+      "type": "color",
+      "value": "#0D0C22",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "kBDGa6r9j"
+      }
+    },
+    {
+      "name": "TextSecondary",
+      "type": "color",
+      "value": "#B3B3B3",
+      "category": "color",
+      "meta": {
+        "projectId": "iiynbYDu6GiGaNNDvPQoVR",
+        "id": "sNdudYdEi"
+      }
+    }
+  ],
   "global": {
     "meta": {
       "source": "plasmic.app"

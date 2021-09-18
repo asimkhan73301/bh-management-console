@@ -1,0 +1,97 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  margin-top: calc(0px - 8px);
+  height: calc(100% + 8px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 8px;
+}
+.labelContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.slotLabel {
+  color: #0d0c22 /* plasmic-token: kBDGa6r9j */;
+  font-weight: 700;
+}
+.inputContainer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  height: 100%;
+  min-height: 0;
+}
+.textInput:global(.__wab_instance) {
+  position: relative;
+}
+.textInput__type_multiLineText:global(.__wab_instance) {
+  display: none;
+}
+.textInput__type_select:global(.__wab_instance) {
+  display: none;
+}
+.textInput__type_checkbox:global(.__wab_instance) {
+  display: none;
+}
+.textInput__type_date:global(.__wab_instance) {
+  display: none;
+}
+.textInput__type_time:global(.__wab_instance) {
+  display: none;
+}
+.multiLineTextInput:global(.__wab_instance) {
+  position: relative;
+  display: none;
+}
+.multiLineTextInput__type_multiLineText:global(.__wab_instance) {
+  min-height: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  display: flex;
+}
+.selectInput:global(.__wab_instance) {
+  position: relative;
+}
+.checkboxGroup:global(.__wab_instance) {
+  position: relative;
+}
+.checkboxInput__o3Gw7:global(.__wab_instance) {
+  position: relative;
+}
+.checkboxInput__uie6H:global(.__wab_instance) {
+  position: relative;
+}
+.dateInputWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.dateInputWrapper__type_date {
+  width: 100%;
+  min-width: 0;
+}
+.timeInputWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}

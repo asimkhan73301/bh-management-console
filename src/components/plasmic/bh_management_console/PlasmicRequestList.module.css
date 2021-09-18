@@ -1,0 +1,83 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: 716px;
+  overflow: auto;
+  min-width: 0;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: flex-start;
+  justify-content: center;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+  margin-top: calc(0px - 8px);
+  height: calc(100% + 8px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-left: 8px;
+  margin-top: 8px;
+}
+.listItem__lni0M:global(.__wab_instance) {
+  position: relative;
+  flex-shrink: 0;
+}
+.listItem__userContext__lni0MT6D1:global(.__wab_instance) {
+  flex-shrink: 0;
+}
+.listItem__i5GNl:global(.__wab_instance) {
+  position: relative;
+  flex-shrink: 0;
+}
+.listItem__userContext__i5GNlt6D1:global(.__wab_instance) {
+  flex-shrink: 0;
+}
+.listItem__xsipB:global(.__wab_instance) {
+  position: relative;
+  flex-shrink: 0;
+}
+.listItem__userContext__xsipBt6D1:global(.__wab_instance) {
+  flex-shrink: 0;
+}
+.listItem__ie1GF:global(.__wab_instance) {
+  position: relative;
+  flex-shrink: 0;
+}
+.listItem__userContext__ie1GFt6D1:global(.__wab_instance) {
+  flex-shrink: 0;
+}
+.listItem__yrlL0:global(.__wab_instance) {
+  position: relative;
+  flex-shrink: 0;
+}
+.listItem__userContext__yrlL0T6D1:global(.__wab_instance) {
+  flex-shrink: 0;
+}
+.listItem___54XwB:global(.__wab_instance) {
+  position: relative;
+  flex-shrink: 0;
+}
+.listItem__userContext___54XwBt6D1:global(.__wab_instance) {
+  flex-shrink: 0;
+}
+.listItem__sDkUo:global(.__wab_instance) {
+  position: relative;
+  flex-shrink: 0;
+}
+.listItem__userContext__sDkUoT6D1:global(.__wab_instance) {
+  flex-shrink: 0;
+}
+.listItem__q5Xvt:global(.__wab_instance) {
+  position: relative;
+  flex-shrink: 0;
+}
+.listItem__userContext__q5XvtT6D1:global(.__wab_instance) {
+  flex-shrink: 0;
+}

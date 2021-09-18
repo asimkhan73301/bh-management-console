@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+.select:global(.__wab_instance) {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.option__dsddX:global(.__wab_instance) {
+  position: relative;
+}
+.option__hT4U:global(.__wab_instance) {
+  position: relative;
+}
+.option__d3RiB:global(.__wab_instance) {
+  position: relative;
+}

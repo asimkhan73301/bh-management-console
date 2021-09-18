@@ -1,0 +1,98 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #3950ae1a;
+  min-width: 0;
+  min-height: 0;
+}
+.content {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  height: 100%;
+  min-height: 0;
+}
+.sidebar__oARh6:global(.__wab_instance) {
+  flex-shrink: 0;
+}
+.mainWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 16px;
+}
+.freeBox___3EWD {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  padding: 8px;
+}
+.freeBox___3EWD > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+}
+.freeBox___3EWD > :global(.__wab_flex-container) > *,
+.freeBox___3EWD > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox___3EWD > :global(.__wab_flex-container) > picture > img,
+.freeBox___3EWD
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 8px;
+}
+.freeBox___5LAlq {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+.freeBox___5LAlq > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+}
+.freeBox___5LAlq > :global(.__wab_flex-container) > *,
+.freeBox___5LAlq > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox___5LAlq > :global(.__wab_flex-container) > picture > img,
+.freeBox___5LAlq
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 8px;
+}
+.text__qEn1U {
+  position: relative;
+  color: #061d7b /* plasmic-token: HNlv0A0HQ */;
+  font-weight: 500;
+}
+.text__rmO01 {
+  position: relative;
+  color: #3950ae /* plasmic-token: 9Jx6sgv6X */;
+}
+.text__lzahG {
+  position: relative;
+  color: #3950ae /* plasmic-token: 9Jx6sgv6X */;
+}
+.dialog:global(.__wab_instance) {
+  position: relative;
+}
+.dialog__hideAddButton:global(.__wab_instance) {
+  display: none;
+}

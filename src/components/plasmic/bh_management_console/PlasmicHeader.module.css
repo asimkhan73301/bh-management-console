@@ -1,0 +1,47 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: space-between;
+  background: #061d7b;
+  box-shadow: 0px 1px 2px 0px #3950ae /* plasmic-token: 9Jx6sgv6X */;
+  min-width: 0;
+  padding: 8px;
+}
+.brand {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.text {
+  position: relative;
+  color: #feec13 /* plasmic-token: Y1azicouK */;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "Cinzel", serif;
+}
+.profile {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.img {
+  position: relative;
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.img > .__wab_img-spacer > img {
+  object-fit: cover;
+}

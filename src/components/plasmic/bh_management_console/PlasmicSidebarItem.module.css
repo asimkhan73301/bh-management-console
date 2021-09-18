@@ -1,0 +1,57 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+  min-width: 0;
+  padding: 10px 16px;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-left: 8px;
+}
+.slotSlot__selected {
+  color: #feec13 /* plasmic-token: Y1azicouK */;
+}
+.svg__bz3Hl {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  flex-shrink: 0;
+  height: 1em;
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 8px;
+  min-width: 0;
+}
+.link {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.slotSlot2 {
+  color: #ffffff /* plasmic-token: nH8lH7QPz */;
+}
+.slotSlot2__selected {
+  color: #feec13 /* plasmic-token: Y1azicouK */;
+}
+.root:hover .slotSlot2 {
+  color: #feec13 /* plasmic-token: Y1azicouK */;
+}

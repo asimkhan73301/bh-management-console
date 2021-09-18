@@ -1,0 +1,194 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+.trigger {
+  background: #f3f3f3;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+  padding: 10px 16px;
+  border: 1px solid #d3d3d300;
+}
+.trigger > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: center;
+  margin-left: calc(0px - 4px);
+  width: calc(100% + 4px);
+}
+.trigger > :global(.__wab_flex-container) > *,
+.trigger > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.trigger > :global(.__wab_flex-container) > picture > img,
+.trigger
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 4px;
+}
+.trigger__isOpen {
+  background: #f3f3f3;
+  border-radius: 8px;
+  padding: 10px 16px;
+  border: 1px solid #d3d3d300;
+}
+.trigger__isDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.root:focus-within .trigger {
+  transition-property: box-shadow, background;
+  transition-duration: 0.2s, 0.2s;
+  box-shadow: 0px 0px 0px 4px #3950ae1a /* plasmic-token: qXrq6c7hE */;
+  background: #ffffff;
+  outline: none;
+  border: 1px solid #3950ae /* plasmic-token: 9Jx6sgv6X */;
+}
+.root .trigger_____focusVisibleWithin {
+  outline: none;
+  border-color: #007aff;
+}
+.root:hover:not(:focus-within) .trigger {
+  transition-property: box-shadow, background;
+  transition-duration: 0.2s, 0.2s;
+  box-shadow: 0px 0px 0px 4px #3950ae1a /* plasmic-token: qXrq6c7hE */;
+  background: #ffffff;
+  outline: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  border: 1px solid #3950ae /* plasmic-token: 9Jx6sgv6X */;
+}
+.contentContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+.root:hover:not(:focus-within) .contentContainer {
+  outline: none;
+}
+.slotSelectedContent {
+  white-space: pre;
+  font-size: 14px;
+}
+.slotSelectedContent > .__wab_text,
+.slotSelectedContent > .__wab_slot-string-wrapper,
+.slotSelectedContent > .__wab_slot > .__wab_text,
+.slotSelectedContent > .__wab_slot > .__wab_slot-string-wrapper,
+.slotSelectedContent > .__wab_slot > .__wab_slot > .__wab_text,
+.slotSelectedContent > .__wab_slot > .__wab_slot > .__wab_slot-string-wrapper,
+.slotSelectedContent > .__wab_slot > .__wab_slot > .__wab_slot > .__wab_text,
+.slotSelectedContent
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot-string-wrapper {
+  text-overflow: ellipsis;
+}
+.slotSelectedContent > *,
+.slotSelectedContent > .__wab_slot > *,
+.slotSelectedContent > .__wab_slot > .__wab_slot > *,
+.slotSelectedContent > .__wab_slot > .__wab_slot > .__wab_slot > *,
+.slotSelectedContent > picture > img,
+.slotSelectedContent > .__wab_slot > picture > img,
+.slotSelectedContent > .__wab_slot > .__wab_slot > picture > img,
+.slotSelectedContent > .__wab_slot > .__wab_slot > .__wab_slot > picture > img {
+  overflow: hidden;
+}
+.root:focus-within .slotSelectedContent > *,
+.root:focus-within .slotSelectedContent > .__wab_slot > *,
+.root:focus-within .slotSelectedContent > .__wab_slot > .__wab_slot > *,
+.root:focus-within
+  .slotSelectedContent
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > *,
+.root:focus-within .slotSelectedContent > picture > img,
+.root:focus-within .slotSelectedContent > .__wab_slot > picture > img,
+.root:focus-within
+  .slotSelectedContent
+  > .__wab_slot
+  > .__wab_slot
+  > picture
+  > img,
+.root:focus-within
+  .slotSelectedContent
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > picture
+  > img {
+  outline: none;
+}
+.slotPlaceholder {
+  white-space: pre;
+  color: #00000080;
+}
+.slotPlaceholder > .__wab_text,
+.slotPlaceholder > .__wab_slot-string-wrapper,
+.slotPlaceholder > .__wab_slot > .__wab_text,
+.slotPlaceholder > .__wab_slot > .__wab_slot-string-wrapper,
+.slotPlaceholder > .__wab_slot > .__wab_slot > .__wab_text,
+.slotPlaceholder > .__wab_slot > .__wab_slot > .__wab_slot-string-wrapper,
+.slotPlaceholder > .__wab_slot > .__wab_slot > .__wab_slot > .__wab_text,
+.slotPlaceholder
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot-string-wrapper {
+  text-overflow: ellipsis;
+}
+.slotPlaceholder > *,
+.slotPlaceholder > .__wab_slot > *,
+.slotPlaceholder > .__wab_slot > .__wab_slot > *,
+.slotPlaceholder > .__wab_slot > .__wab_slot > .__wab_slot > *,
+.slotPlaceholder > picture > img,
+.slotPlaceholder > .__wab_slot > picture > img,
+.slotPlaceholder > .__wab_slot > .__wab_slot > picture > img,
+.slotPlaceholder > .__wab_slot > .__wab_slot > .__wab_slot > picture > img {
+  overflow: hidden;
+}
+.dropdownIcon {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+  color: #535353;
+  flex-shrink: 0;
+}
+.root .dropdownIcon_____focusVisibleWithin {
+  outline: none;
+}
+.overlay:global(.__wab_instance) {
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: 1000;
+}
+.optionsContainer {
+  display: inline-flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  overflow: auto;
+}
+.option__nYYhX:global(.__wab_instance) {
+  position: relative;
+  flex-shrink: 0;
+}
+.option__rp8PC:global(.__wab_instance) {
+  position: relative;
+  flex-shrink: 0;
+}

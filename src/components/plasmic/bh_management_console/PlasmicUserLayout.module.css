@@ -1,0 +1,92 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #3950ae1a;
+  min-width: 0;
+  min-height: 0;
+}
+.content {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  height: 100%;
+  min-height: 0;
+}
+.sidebar__usNhm:global(.__wab_instance) {
+  flex-shrink: 0;
+}
+.mainWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 16px;
+}
+.freeBox__qiOh {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  padding: 8px;
+}
+.freeBox__qiOh > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+}
+.freeBox__qiOh > :global(.__wab_flex-container) > *,
+.freeBox__qiOh > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__qiOh > :global(.__wab_flex-container) > picture > img,
+.freeBox__qiOh
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 8px;
+}
+.freeBox__foBWe {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+.freeBox__foBWe > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+}
+.freeBox__foBWe > :global(.__wab_flex-container) > *,
+.freeBox__foBWe > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__foBWe > :global(.__wab_flex-container) > picture > img,
+.freeBox__foBWe
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 8px;
+}
+.text___4Ynlg {
+  position: relative;
+  color: #061d7b /* plasmic-token: HNlv0A0HQ */;
+  font-weight: 500;
+}
+.text__giR5R {
+  position: relative;
+  color: #3950ae /* plasmic-token: 9Jx6sgv6X */;
+}
+.text__sxnlp {
+  position: relative;
+  color: #3950ae /* plasmic-token: 9Jx6sgv6X */;
+}

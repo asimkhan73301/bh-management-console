@@ -1,0 +1,53 @@
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
+}
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+}
+.button__type_primary {
+  background: #061d7b;
+  border: 1px solid #061d7b /* plasmic-token: HNlv0A0HQ */;
+}
+.button__type_secondary {
+  background: #feec13;
+  border: 1px solid #feec13 /* plasmic-token: Y1azicouK */;
+}
+.button__rounded {
+  border-radius: 8px;
+}
+.button__size_xs {
+  padding: 2px 6px;
+}
+.button__size_sm {
+  padding: 4px 10px;
+}
+.root:hover .button {
+  background: #f3f3f3;
+}
+.root__type_primary:hover .button__type_primary {
+  background: #3950ae;
+}
+.root__type_secondary:hover .button__type_secondary {
+  background: #ffff79;
+}
+.slotText__type_primary {
+  color: #ffffff;
+}
+.slotText__type_secondary {
+  color: #061d7b /* plasmic-token: K1sbhgWfi */;
+}
+.slotText__size_xs {
+  font-size: 10px;
+}
+.slotText__size_sm {
+  font-size: 12px;
+}

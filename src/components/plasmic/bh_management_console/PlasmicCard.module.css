@@ -1,0 +1,52 @@
+.root {
+  box-shadow: 0px 5px 10px 0px #0000000d;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  min-width: 0;
+  padding: 16px;
+}
+.root__rounded {
+  border-radius: 8px;
+}
+.titleContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 8px 0px;
+  border-bottom: 1px solid #f3f3f3 /* plasmic-token: Y3QfKe8SC */;
+}
+.titleContainer__contentOnly {
+  display: none;
+}
+.slotTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #0d0c22 /* plasmic-token: kBDGa6r9j */;
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.closeButton:global(.__wab_instance) {
+  position: relative;
+  display: none;
+}
+.closeButton__hasClose:global(.__wab_instance) {
+  display: flex;
+}
+.crossIcon {
+  position: relative;
+  object-fit: cover;
+  width: 18px;
+  height: 18px;
+}

@@ -1,0 +1,30 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  overflow: auto;
+  min-width: 0;
+}
+.adminLayout:global(.__wab_instance) {
+  position: relative;
+}
+.text__w0X7 {
+  position: relative;
+  color: #061d7b /* plasmic-token: HNlv0A0HQ */;
+  font-weight: 500;
+  height: auto;
+}
+.text__tFsl {
+  position: relative;
+  color: #3950ae /* plasmic-token: 9Jx6sgv6X */;
+}
+.text__q81De {
+  position: relative;
+  color: #3950ae /* plasmic-token: 9Jx6sgv6X */;
+}
+.requestList:global(.__wab_instance) {
+  position: relative;
+}

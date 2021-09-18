@@ -1,0 +1,40 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+.textbox {
+  font-size: 14px;
+  font-weight: 300;
+  color: #0d0c22 /* plasmic-token: kBDGa6r9j */;
+  background: #f3f3f3;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  border: 1px solid #d3d3d300;
+}
+.root:focus-within .textbox {
+  transition-property: box-shadow, background;
+  transition-duration: 0.2s, 0.2s;
+  box-shadow: 0px 0px 0px 4px #3950ae1a /* plasmic-token: qXrq6c7hE */;
+  background: #ffffff;
+  outline: none;
+  border: 1px solid #3950ae /* plasmic-token: 9Jx6sgv6X */;
+}
+.root:hover .textbox {
+  transition-property: box-shadow, background;
+  transition-duration: 0.2s, 0.2s;
+  box-shadow: 0px 0px 0px 4px #3950ae1a /* plasmic-token: qXrq6c7hE */;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 300;
+  color: #0d0c22 /* plasmic-token: kBDGa6r9j */;
+  border-radius: 8px;
+  padding: 10px 16px;
+  border: 1px solid #3950ae /* plasmic-token: 9Jx6sgv6X */;
+}

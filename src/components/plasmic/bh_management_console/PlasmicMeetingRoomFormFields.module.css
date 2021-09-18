@@ -1,0 +1,40 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-top: calc(0px - 16px);
+  height: calc(100% + 16px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 16px;
+}
+.dateInput:global(.__wab_instance) {
+  position: relative;
+}
+.typeInput:global(.__wab_instance) {
+  position: relative;
+}
+.text__vbbZ3 {
+  width: auto;
+  display: inline-block;
+}
+.descriptionInput:global(.__wab_instance) {
+  position: relative;
+}
+.text__eBYcB {
+  width: auto;
+  display: inline-block;
+}
+.approverInput:global(.__wab_instance) {
+  position: relative;
+}

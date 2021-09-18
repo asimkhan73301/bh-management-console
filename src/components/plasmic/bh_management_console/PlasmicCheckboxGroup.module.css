@@ -1,0 +1,20 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+.root__vertical {
+  display: inline-flex;
+  flex-direction: column;
+  width: auto;
+  flex-column-gap: 0px;
+}
+.checkboxInput___4WUwj:global(.__wab_instance) {
+  position: relative;
+}
+.checkboxInput__qLhdB:global(.__wab_instance) {
+  position: relative;
+}
