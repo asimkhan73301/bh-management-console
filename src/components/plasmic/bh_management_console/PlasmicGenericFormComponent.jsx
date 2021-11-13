@@ -27,7 +27,8 @@ export const PlasmicGenericFormComponent__VariantProps = new Array();
 
 export const PlasmicGenericFormComponent__ArgProps = new Array(
   "fieldsWrapper",
-  "title"
+  "title",
+  "redirectOnSubmitLink"
 );
 
 function PlasmicGenericFormComponent__RenderFunc(props) {
@@ -65,6 +66,7 @@ function PlasmicGenericFormComponent__RenderFunc(props) {
 
             value: args.fieldsWrapper
           })}
+          redirectOnSubmitLink={args.redirectOnSubmitLink}
         />
       </Card>
     </div>

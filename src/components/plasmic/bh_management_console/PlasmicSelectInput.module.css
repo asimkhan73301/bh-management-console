@@ -20,3 +20,9 @@
 .option__d3RiB:global(.__wab_instance) {
   position: relative;
 }
+.svg__uw0Vh {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}

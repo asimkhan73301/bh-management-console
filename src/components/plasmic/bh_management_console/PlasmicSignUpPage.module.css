@@ -24,10 +24,21 @@
   align-items: stretch;
   min-width: 0;
 }
+.columns > :nth-child(2n + 1) {
+  width: calc((100% - 2 * 0px) * 6 / 12);
+}
+.columns > :nth-child(2n + 2) {
+  width: calc((100% - 2 * 0px) * 6 / 12);
+}
 @media (min-width: 0px) and (max-width: 768px) {
   .columns {
     flex-direction: column;
     flex-column-gap: 0px;
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .columns > :nth-child(1n + 1) {
+    width: calc((100% - 1 * 0px) * 12 / 12);
   }
 }
 .column__twpMn {
@@ -91,6 +102,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  min-width: 0;
   margin-left: calc(0px - 8px);
   width: calc(100% + 8px);
 }
@@ -150,6 +162,7 @@
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
+  min-width: 0;
   margin-left: calc(0px - 8px);
   width: calc(100% + 8px);
 }
@@ -191,6 +204,7 @@
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
+  min-width: 0;
   margin-left: calc(0px - 8px);
   width: calc(100% + 8px);
 }

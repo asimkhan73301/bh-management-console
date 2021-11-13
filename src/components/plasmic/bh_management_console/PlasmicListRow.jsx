@@ -18,22 +18,20 @@ import {
 } from "@plasmicapp/react-web";
 import Card from "../../Card"; // plasmic-import: cbRusPsa56/component
 import Badge from "../../Badge"; // plasmic-import: rcqj19I7Oe/component
+import TimeInfo from "../../TimeInfo"; // plasmic-import: 1Q1glXnQfVK/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "../blank_project/plasmic_blank_project.module.css"; // plasmic-import: iiynbYDu6GiGaNNDvPQoVR/projectcss
 import * as sty from "./PlasmicListRow.module.css"; // plasmic-import: htyyUHdrX7/css
+import CustomerSupportsvgIcon from "./icons/PlasmicIcon__CustomerSupportsvg"; // plasmic-import: UAOJiIzwc/icon
 import TrafficJamsvgIcon from "./icons/PlasmicIcon__TrafficJamsvg"; // plasmic-import: 8FGzZD12o/icon
+import GroupMeetingsvgIcon from "./icons/PlasmicIcon__GroupMeetingsvg"; // plasmic-import: UesfMCqru/icon
 import _51F6Fb256629Fc755B8870C801092942PngOBmXbAsf4 from "./images/_51F6Fb256629Fc755B8870C801092942Png.png"; // plasmic-import: oBMXbASF4/picture
+import honda1PngBI0Bqcls3 from "./images/honda1Png.png"; // plasmic-import: bI0Bqcls3/picture
 
-export const PlasmicListRow__VariantProps = new Array("rowType");
+export const PlasmicListRow__VariantProps = new Array("rowType", "status");
 
-export const PlasmicListRow__ArgProps = new Array(
-  "icon",
-  "typeFields",
-  "username",
-  "userImage",
-  "content"
-);
+export const PlasmicListRow__ArgProps = new Array();
 
 function PlasmicListRow__RenderFunc(props) {
   const { variants, args, overrides, forNode, dataFetches } = props;
@@ -49,7 +47,18 @@ function PlasmicListRow__RenderFunc(props) {
         data-plasmic-name={"card"}
         data-plasmic-override={overrides.card}
         className={classNames("__wab_instance", sty.card, {
-          [sty.card__rowType_fleet]: hasVariant(variants, "rowType", "fleet")
+          [sty.card__rowType_fleet]: hasVariant(variants, "rowType", "fleet"),
+          [sty.card__status_approved]: hasVariant(
+            variants,
+            "status",
+            "approved"
+          ),
+
+          [sty.card__status_rejected]: hasVariant(
+            variants,
+            "status",
+            "rejected"
+          )
         })}
         contentOnly={"contentOnly"}
         rounded={"rounded"}
@@ -59,8 +68,73 @@ function PlasmicListRow__RenderFunc(props) {
           data-plasmic-name={"contentWrapper"}
           data-plasmic-override={overrides.contentWrapper}
           hasGap={true}
-          className={classNames(defaultcss.all, sty.contentWrapper)}
+          className={classNames(defaultcss.all, sty.contentWrapper, {
+            [sty.contentWrapper__status_approved]: hasVariant(
+              variants,
+              "status",
+              "approved"
+            ),
+
+            [sty.contentWrapper__status_rejected]: hasVariant(
+              variants,
+              "status",
+              "rejected"
+            )
+          })}
         >
+          {(
+            hasVariant(variants, "status", "rejected")
+              ? true
+              : hasVariant(variants, "status", "approved")
+              ? true
+              : true
+          ) ? (
+            <div
+              className={classNames(defaultcss.all, sty.freeBox__muBX, {
+                [sty.freeBox__status_approved__muBXzKfg1]: hasVariant(
+                  variants,
+                  "status",
+                  "approved"
+                ),
+
+                [sty.freeBox__status_rejected__muBXgVpx7]: hasVariant(
+                  variants,
+                  "status",
+                  "rejected"
+                )
+              })}
+            >
+              <Badge
+                className={classNames("__wab_instance", sty.badge__fPoM1, {
+                  [sty.badge__status_approved__fPoM1ZKfg1]: hasVariant(
+                    variants,
+                    "status",
+                    "approved"
+                  ),
+
+                  [sty.badge__status_rejected__fPoM1GVpx7]: hasVariant(
+                    variants,
+                    "status",
+                    "rejected"
+                  )
+                })}
+                color={
+                  hasVariant(variants, "status", "rejected")
+                    ? "red"
+                    : hasVariant(variants, "status", "approved")
+                    ? "green"
+                    : undefined
+                }
+                label={
+                  hasVariant(variants, "status", "rejected")
+                    ? "Rejected"
+                    : "Approved"
+                }
+                size={"small"}
+              />
+            </div>
+          ) : null}
+
           <p.Stack
             as={"div"}
             data-plasmic-name={"leftContent"}
@@ -71,115 +145,335 @@ function PlasmicListRow__RenderFunc(props) {
             <p.Stack
               as={"div"}
               hasGap={true}
-              className={classNames(defaultcss.all, sty.freeBox___9Ef1)}
+              className={classNames(defaultcss.all, sty.freeBox___9Ef1, {
+                [sty.freeBox__rowType_fleet___9Ef11WbB]: hasVariant(
+                  variants,
+                  "rowType",
+                  "fleet"
+                )
+              })}
             >
               <div
                 data-plasmic-name={"iconWrapper"}
                 data-plasmic-override={overrides.iconWrapper}
                 className={classNames(defaultcss.all, sty.iconWrapper)}
               >
-                {p.renderPlasmicSlot({
-                  defaultContents: (
-                    <TrafficJamsvgIcon
-                      className={classNames(defaultcss.all, sty.svg__wwcIb)}
-                      role={"img"}
-                    />
-                  ),
+                <p.PlasmicIcon
+                  data-plasmic-name={"svg"}
+                  data-plasmic-override={overrides.svg}
+                  PlasmicIconType={
+                    hasVariant(variants, "rowType", "meetingRoom")
+                      ? GroupMeetingsvgIcon
+                      : hasVariant(variants, "rowType", "fleet")
+                      ? TrafficJamsvgIcon
+                      : CustomerSupportsvgIcon
+                  }
+                  className={classNames(defaultcss.all, sty.svg, {
+                    [sty.svg__rowType_fleet]: hasVariant(
+                      variants,
+                      "rowType",
+                      "fleet"
+                    ),
 
-                  value: args.icon
-                })}
+                    [sty.svg__rowType_meetingRoom]: hasVariant(
+                      variants,
+                      "rowType",
+                      "meetingRoom"
+                    )
+                  })}
+                  role={"img"}
+                />
               </div>
 
-              <div
-                data-plasmic-name={"contentWrapper2"}
-                data-plasmic-override={overrides.contentWrapper2}
-                className={classNames(defaultcss.all, sty.contentWrapper2)}
-              >
-                {p.renderPlasmicSlot({
-                  defaultContents: (
+              {(
+                hasVariant(variants, "rowType", "meetingRoom") ? true : true
+              ) ? (
+                <div
+                  className={classNames(defaultcss.all, sty.freeBox___7R05C, {
+                    [sty.freeBox__rowType_meetingRoom___7R05CTl2Op]: hasVariant(
+                      variants,
+                      "rowType",
+                      "meetingRoom"
+                    )
+                  })}
+                >
+                  {(
+                    hasVariant(variants, "rowType", "meetingRoom")
+                      ? true
+                      : hasVariant(variants, "rowType", "fleet")
+                      ? true
+                      : false
+                  ) ? (
                     <div
                       className={classNames(
                         defaultcss.all,
                         defaultcss.__wab_text,
-                        sty.text__fH7X1
+                        sty.text__hvVmm,
+                        {
+                          [sty.text__rowType_fleet__hvVmm1WbB]: hasVariant(
+                            variants,
+                            "rowType",
+                            "fleet"
+                          ),
+
+                          [sty.text__rowType_meetingRoom__hvVmmTl2Op]:
+                            hasVariant(variants, "rowType", "meetingRoom")
+                        }
                       )}
                     >
-                      {
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi urna dolor, porta vitae fermentum malesuada, suscipit nec massa. Pellentesque consequat quam quis mattis aliquet. Nulla id aliquet ante, a gravida nisl. Nulla facilisi. Donec pharetra vitae ligula ut interdum. Etiam porttitor nulla risus, id dignissim ex venenatis eu. Aliquam odio libero, consectetur id leo at, scelerisque ultrices libero. Cras a risus iaculis, dignissim lacus eu, consectetur arcu. Pellentesque tristique faucibus tristique. Mauris lacinia pretium dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer sit amet euismod quam.\n"
-                      }
+                      {hasVariant(variants, "rowType", "meetingRoom")
+                        ? "Meeting Room 2"
+                        : "Enter some text"}
                     </div>
-                  ),
+                  ) : null}
 
-                  value: args.content
-                })}
-              </div>
+                  <div
+                    data-plasmic-name={"contentWrapper2"}
+                    data-plasmic-override={overrides.contentWrapper2}
+                    className={classNames(defaultcss.all, sty.contentWrapper2, {
+                      [sty.contentWrapper2__rowType_fleet]: hasVariant(
+                        variants,
+                        "rowType",
+                        "fleet"
+                      ),
+
+                      [sty.contentWrapper2__rowType_meetingRoom]: hasVariant(
+                        variants,
+                        "rowType",
+                        "meetingRoom"
+                      )
+                    })}
+                  >
+                    {(
+                      hasVariant(variants, "rowType", "fleet") ? true : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          defaultcss.all,
+                          defaultcss.__wab_text,
+                          sty.text__fH7X1,
+                          {
+                            [sty.text__rowType_fleet__fH7X11WbB]: hasVariant(
+                              variants,
+                              "rowType",
+                              "fleet"
+                            ),
+
+                            [sty.text__rowType_meetingRoom__fH7X1Tl2Op]:
+                              hasVariant(variants, "rowType", "meetingRoom")
+                          }
+                        )}
+                      >
+                        {
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi urna dolor, porta vitae fermentum malesuada, suscipit nec massa. Pellentesque consequat quam quis mattis aliquet. Nulla id aliquet ante, a gravida nisl. Nulla facilisi. Donec pharetra vitae ligula ut interdum. Etiam porttitor nulla risus, id dignissim ex venenatis eu. Aliquam odio libero, consectetur id leo at, scelerisque ultrices libero. Cras a risus iaculis, dignissim lacus eu, consectetur arcu. Pellentesque tristique faucibus tristique. Mauris lacinia pretium dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer sit amet euismod quam.\n"
+                        }
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+              ) : null}
             </p.Stack>
 
             <p.Stack
               as={"div"}
               hasGap={true}
-              className={classNames(defaultcss.all, sty.freeBox__g4VWn)}
-            >
-              {p.renderPlasmicSlot({
-                defaultContents: (
-                  <React.Fragment>
-                    <Badge
-                      className={classNames("__wab_instance", sty.badge__lkvWk)}
-                      size={"small"}
-                    />
+              className={classNames(defaultcss.all, sty.freeBox__g4VWn, {
+                [sty.freeBox__rowType_fleet__g4VWn1WbB]: hasVariant(
+                  variants,
+                  "rowType",
+                  "fleet"
+                ),
 
+                [sty.freeBox__rowType_meetingRoom__g4VWnTl2Op]: hasVariant(
+                  variants,
+                  "rowType",
+                  "meetingRoom"
+                )
+              })}
+            >
+              {(hasVariant(variants, "rowType", "fleet") ? true : true) ? (
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(defaultcss.all, sty.freeBox___2Yx2, {
+                    [sty.freeBox__rowType_fleet___2Yx21WbB]: hasVariant(
+                      variants,
+                      "rowType",
+                      "fleet"
+                    )
+                  })}
+                >
+                  {(
+                    hasVariant(variants, "rowType", "meetingRoom")
+                      ? true
+                      : hasVariant(variants, "rowType", "fleet")
+                      ? true
+                      : true
+                  ) ? (
                     <Badge
-                      className={classNames("__wab_instance", sty.badge__wjrP2)}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.badge__lkvWk,
+                        {
+                          [sty.badge__rowType_fleet__lkvWk1WbB]: hasVariant(
+                            variants,
+                            "rowType",
+                            "fleet"
+                          ),
+
+                          [sty.badge__rowType_meetingRoom__lkvWkTl2Op]:
+                            hasVariant(variants, "rowType", "meetingRoom")
+                        }
+                      )}
+                      image={
+                        <img
+                          alt={""}
+                          className={classNames(
+                            defaultcss.img,
+                            sty.img__mnfh5,
+                            {
+                              [sty.img__rowType_fleet__mnfh51WbB]: hasVariant(
+                                variants,
+                                "rowType",
+                                "fleet"
+                              )
+                            }
+                          )}
+                          src={
+                            hasVariant(variants, "rowType", "fleet")
+                              ? _51F6Fb256629Fc755B8870C801092942PngOBmXbAsf4
+                              : undefined
+                          }
+                          title={"Driver Picture"}
+                        />
+                      }
+                      kind={
+                        hasVariant(variants, "rowType", "fleet")
+                          ? "icon"
+                          : undefined
+                      }
                       label={
                         <div
                           className={classNames(
                             defaultcss.all,
                             defaultcss.__wab_text,
-                            sty.text__qnSn
+                            sty.text__xoKpp,
+                            {
+                              [sty.text__rowType_fleet__xoKpp1WbB]: hasVariant(
+                                variants,
+                                "rowType",
+                                "fleet"
+                              )
+                            }
                           )}
+                          title={"Driver Name"}
                         >
-                          {"Plumbing"}
+                          {hasVariant(variants, "rowType", "fleet")
+                            ? "Hussain Ali"
+                            : "Service Kind 1"}
                         </div>
                       }
                       size={"small"}
                     />
-                  </React.Fragment>
-                ),
+                  ) : null}
+                  {(hasVariant(variants, "rowType", "fleet") ? true : true) ? (
+                    <Badge
+                      className={classNames(
+                        "__wab_instance",
+                        sty.badge__wjrP2,
+                        {
+                          [sty.badge__rowType_fleet__wjrP21WbB]: hasVariant(
+                            variants,
+                            "rowType",
+                            "fleet"
+                          )
+                        }
+                      )}
+                      image={
+                        <img
+                          alt={""}
+                          className={classNames(
+                            defaultcss.img,
+                            sty.img__qXn2E,
+                            {
+                              [sty.img__rowType_fleet__qXn2E1WbB]: hasVariant(
+                                variants,
+                                "rowType",
+                                "fleet"
+                              )
+                            }
+                          )}
+                          src={
+                            hasVariant(variants, "rowType", "fleet")
+                              ? honda1PngBI0Bqcls3
+                              : undefined
+                          }
+                          title={"Vehical Picture"}
+                        />
+                      }
+                      kind={
+                        hasVariant(variants, "rowType", "fleet")
+                          ? "icon"
+                          : undefined
+                      }
+                      label={
+                        <div
+                          className={classNames(
+                            defaultcss.all,
+                            defaultcss.__wab_text,
+                            sty.text__qnSn,
+                            {
+                              [sty.text__rowType_fleet__qnSn1WbB]: hasVariant(
+                                variants,
+                                "rowType",
+                                "fleet"
+                              ),
 
-                value: args.typeFields
-              })}
+                              [sty.text__rowType_meetingRoom__qnSnTl2Op]:
+                                hasVariant(variants, "rowType", "meetingRoom")
+                            }
+                          )}
+                          title={"Vehical Name"}
+                        >
+                          {hasVariant(variants, "rowType", "meetingRoom")
+                            ? "Refreshment"
+                            : hasVariant(variants, "rowType", "fleet")
+                            ? "Honda City"
+                            : "Plumbing"}
+                        </div>
+                      }
+                      size={"small"}
+                    />
+                  ) : null}
+                </p.Stack>
+              ) : null}
+              {(
+                hasVariant(variants, "rowType", "meetingRoom")
+                  ? true
+                  : hasVariant(variants, "rowType", "fleet")
+                  ? true
+                  : false
+              ) ? (
+                <TimeInfo
+                  data-plasmic-name={"timeInfo"}
+                  data-plasmic-override={overrides.timeInfo}
+                  className={classNames("__wab_instance", sty.timeInfo, {
+                    [sty.timeInfo__rowType_fleet]: hasVariant(
+                      variants,
+                      "rowType",
+                      "fleet"
+                    ),
+
+                    [sty.timeInfo__rowType_meetingRoom]: hasVariant(
+                      variants,
+                      "rowType",
+                      "meetingRoom"
+                    )
+                  })}
+                />
+              ) : null}
             </p.Stack>
           </p.Stack>
-
-          <div
-            data-plasmic-name={"rightContent"}
-            data-plasmic-override={overrides.rightContent}
-            className={classNames(defaultcss.all, sty.rightContent)}
-          >
-            <div
-              data-plasmic-name={"profile"}
-              data-plasmic-override={overrides.profile}
-              className={classNames(defaultcss.all, sty.profile)}
-            >
-              {p.renderPlasmicSlot({
-                defaultContents: (
-                  <img
-                    alt={""}
-                    className={classNames(defaultcss.img, sty.img__iBohC)}
-                    src={_51F6Fb256629Fc755B8870C801092942PngOBmXbAsf4}
-                  />
-                ),
-
-                value: args.userImage
-              })}
-
-              {p.renderPlasmicSlot({
-                defaultContents: "John Doe",
-                value: args.username,
-                className: classNames(sty.slotUsername)
-              })}
-            </div>
-          </div>
         </p.Stack>
       </Card>
     </div>
@@ -193,9 +487,9 @@ const PlasmicDescendants = {
     "contentWrapper",
     "leftContent",
     "iconWrapper",
+    "svg",
     "contentWrapper2",
-    "rightContent",
-    "profile"
+    "timeInfo"
   ],
 
   card: [
@@ -203,25 +497,32 @@ const PlasmicDescendants = {
     "contentWrapper",
     "leftContent",
     "iconWrapper",
+    "svg",
     "contentWrapper2",
-    "rightContent",
-    "profile"
+    "timeInfo"
   ],
 
   contentWrapper: [
     "contentWrapper",
     "leftContent",
     "iconWrapper",
+    "svg",
     "contentWrapper2",
-    "rightContent",
-    "profile"
+    "timeInfo"
   ],
 
-  leftContent: ["leftContent", "iconWrapper", "contentWrapper2"],
-  iconWrapper: ["iconWrapper"],
+  leftContent: [
+    "leftContent",
+    "iconWrapper",
+    "svg",
+    "contentWrapper2",
+    "timeInfo"
+  ],
+
+  iconWrapper: ["iconWrapper", "svg"],
+  svg: ["svg"],
   contentWrapper2: ["contentWrapper2"],
-  rightContent: ["rightContent", "profile"],
-  profile: ["profile"]
+  timeInfo: ["timeInfo"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -259,9 +560,9 @@ export const PlasmicListRow = Object.assign(
     contentWrapper: makeNodeComponent("contentWrapper"),
     leftContent: makeNodeComponent("leftContent"),
     iconWrapper: makeNodeComponent("iconWrapper"),
+    svg: makeNodeComponent("svg"),
     contentWrapper2: makeNodeComponent("contentWrapper2"),
-    rightContent: makeNodeComponent("rightContent"),
-    profile: makeNodeComponent("profile"),
+    timeInfo: makeNodeComponent("timeInfo"),
     // Metadata about props expected for PlasmicListRow
     internalVariantProps: PlasmicListRow__VariantProps,
     internalArgProps: PlasmicListRow__ArgProps

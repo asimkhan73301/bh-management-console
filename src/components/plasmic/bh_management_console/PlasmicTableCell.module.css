@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 8px 12px;
+}
+.root__color_primary {
+  background: #061d7b;
+}
+.root__color_primaryLight {
+  background: #3950ae1a;
+}
+.slotTargetChildren__color_primary {
+  color: #ffffff /* plasmic-token: nH8lH7QPz */;
+}

@@ -11,17 +11,20 @@
 import * as React from "react";
 import * as p from "@plasmicapp/react-web";
 import {
+  hasVariant,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts
 } from "@plasmicapp/react-web";
 import Sidebar from "../../Sidebar"; // plasmic-import: 2ETjiGbh3p/component
+import TextInput from "../../TextInput"; // plasmic-import: gb4IIit3yv/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "../blank_project/plasmic_blank_project.module.css"; // plasmic-import: iiynbYDu6GiGaNNDvPQoVR/projectcss
 import * as sty from "./PlasmicUserLayout.module.css"; // plasmic-import: TF4eeP5pkV/css
+import Icons8SearchsvgIcon from "./icons/PlasmicIcon__Icons8Searchsvg"; // plasmic-import: tdjoboKFAS/icon
 
-export const PlasmicUserLayout__VariantProps = new Array();
+export const PlasmicUserLayout__VariantProps = new Array("hideFilters");
 
 export const PlasmicUserLayout__ArgProps = new Array(
   "mainWrapper",
@@ -109,6 +112,35 @@ function PlasmicUserLayout__RenderFunc(props) {
             </p.Stack>
           </p.Stack>
 
+          {(
+            hasVariant(variants, "hideFilters", "hideFilters") ? true : true
+          ) ? (
+            <div
+              data-plasmic-name={"filterWrapper"}
+              data-plasmic-override={overrides.filterWrapper}
+              className={classNames(defaultcss.all, sty.filterWrapper, {
+                [sty.filterWrapper__hideFilters]: hasVariant(
+                  variants,
+                  "hideFilters",
+                  "hideFilters"
+                )
+              })}
+            >
+              <TextInput
+                data-plasmic-name={"textInput"}
+                data-plasmic-override={overrides.textInput}
+                className={classNames("__wab_instance", sty.textInput)}
+                icon={"icon"}
+              >
+                <Icons8SearchsvgIcon
+                  data-plasmic-name={"svg"}
+                  data-plasmic-override={overrides.svg}
+                  className={classNames(defaultcss.all, sty.svg)}
+                  role={"img"}
+                />
+              </TextInput>
+            </div>
+          ) : null}
           {p.renderPlasmicSlot({
             defaultContents: null,
             value: args.mainWrapper
@@ -120,9 +152,12 @@ function PlasmicUserLayout__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "content", "mainWrapper"],
-  content: ["content", "mainWrapper"],
-  mainWrapper: ["mainWrapper"]
+  root: ["root", "content", "mainWrapper", "filterWrapper", "textInput", "svg"],
+  content: ["content", "mainWrapper", "filterWrapper", "textInput", "svg"],
+  mainWrapper: ["mainWrapper", "filterWrapper", "textInput", "svg"],
+  filterWrapper: ["filterWrapper", "textInput", "svg"],
+  textInput: ["textInput", "svg"],
+  svg: ["svg"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -158,6 +193,9 @@ export const PlasmicUserLayout = Object.assign(
     // Helper components rendering sub-elements
     content: makeNodeComponent("content"),
     mainWrapper: makeNodeComponent("mainWrapper"),
+    filterWrapper: makeNodeComponent("filterWrapper"),
+    textInput: makeNodeComponent("textInput"),
+    svg: makeNodeComponent("svg"),
     // Metadata about props expected for PlasmicUserLayout
     internalVariantProps: PlasmicUserLayout__VariantProps,
     internalArgProps: PlasmicUserLayout__ArgProps

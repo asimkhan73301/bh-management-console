@@ -64,7 +64,7 @@ function PlasmicCard__RenderFunc(props) {
           {p.renderPlasmicSlot({
             defaultContents: "Title",
             value: args.title,
-            className: classNames(sty.slotTitle)
+            className: classNames(sty.slotTargetTitle)
           })}
 
           <div

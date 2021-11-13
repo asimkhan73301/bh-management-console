@@ -1504,14 +1504,16 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@plasmicapp/cli@^0.1.161":
-  version "0.1.161"
-  resolved "https://registry.yarnpkg.com/@plasmicapp/cli/-/cli-0.1.161.tgz#004655c6781e8c71f4eb3f9158d4e2e7c004262c"
-  integrity sha512-q9JbFlOalBGGVut0O5bWu9eeffn3UWJKg2bRSz94R5i2bZRvOqz3nej5Q+rWC8BdrXP6DxQl/KQAgC3Wc3ZfFw==
+"@plasmicapp/cli@^0.1.166":
+  version "0.1.166"
+  resolved "https://registry.yarnpkg.com/@plasmicapp/cli/-/cli-0.1.166.tgz#be7c0a0e68c8d31ab175e0c10689b3bca0a558ab"
+  integrity sha512-pm/9vZtsW2UylGatPfRESKuRhlLpe5SQPiOHDtufHJfHOYmUJrNhuIEtI+IWzuxF118GlZVcY9Ofd52qpgAgxA==
   dependencies:
     "@babel/core" "^7.12.3"
     "@babel/generator" "^7.12.1"
-    "@plasmicapp/code-merger" "^0.0.31"
+    "@babel/parser" "^7.12.3"
+    "@babel/traverse" "^7.12.1"
+    "@plasmicapp/code-merger" "^0.0.33"
     "@sentry/node" "^5.19.2"
     "@types/socket.io-client" "^1.4.34"
     axios "^0.21.1"
@@ -1539,15 +1541,16 @@
     wrap-ansi "^7.0.0"
     yargs "^15.4.1"
 
-"@plasmicapp/code-merger@^0.0.31":
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/@plasmicapp/code-merger/-/code-merger-0.0.31.tgz#fdbab02229458aff2139f72258c6af46723ffec1"
-  integrity sha512-0s+jHEkwFQ220hIG1p76kTTLL8Cr5QsEFuwnrt2Q+nQHDeLwL9Mt8w2Ro1mBKNNac9/hdqC0eVPzVLbWhxWf/g==
+"@plasmicapp/code-merger@^0.0.33":
+  version "0.0.33"
+  resolved "https://registry.yarnpkg.com/@plasmicapp/code-merger/-/code-merger-0.0.33.tgz#92d1f5b3dbe81b1a8b0e26a949d27d8619531e4c"
+  integrity sha512-FTO1MwoQ3s+Sh4Fqc8UJ0b1LZlv/0GidphucxvdDWB6zD98KhrTw3t38n8f4/cfw1SosTbd4uQ7Cn3z/P5Fc0Q==
   dependencies:
     "@babel/core" "^7.12.3"
     "@babel/generator" "^7.12.1"
     "@babel/parser" "^7.12.3"
     "@babel/traverse" "^7.12.1"
+    "@babel/types" "^7.12.1"
     "@types/babel__core" "^7.1.14"
     "@types/babel__generator" "^7.6.2"
     "@types/babel__parser" "^7.1.1"
@@ -1556,10 +1559,10 @@
     lodash "^4.17.19"
     prettier "^2.0.5"
 
-"@plasmicapp/react-web@^0.2.76":
-  version "0.2.76"
-  resolved "https://registry.yarnpkg.com/@plasmicapp/react-web/-/react-web-0.2.76.tgz#cb7e321874209a8c3eeb608e7ccac4b22f195225"
-  integrity sha512-DC3eOlKVwLskyhywQgiyUy7cThXTqxIsK6/+4fqmcuhYgGggn08DZ3m4R6Gu3LQAr2QxHYWhi+5omSF1XIhmyA==
+"@plasmicapp/react-web@^0.2.90":
+  version "0.2.90"
+  resolved "https://registry.yarnpkg.com/@plasmicapp/react-web/-/react-web-0.2.90.tgz#5bb410ce91ab0f47b8c770f082ba0f60c29078ee"
+  integrity sha512-dFnslQ4tpvTl8qS+yab7SYIYBN+hE95PIjEJdRkagNnAIzFNFPeqzX9Nv5qFiDxJ6CBn/Po1InbkIMXqg88Wjw==
   dependencies:
     classnames "^2.2.6"
     react-aria "^3.7.0"

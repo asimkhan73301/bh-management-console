@@ -49,8 +49,50 @@ function PlasmicMeetingRoomFormFields__RenderFunc(props) {
         data-plasmic-override={overrides.dateInput}
         className={classNames("__wab_instance", sty.dateInput)}
         label={"Date"}
-        type={"date"}
+        type={"dateRange"}
       />
+
+      <p.Stack
+        as={"div"}
+        data-plasmic-name={"freeBox"}
+        data-plasmic-override={overrides.freeBox}
+        hasGap={true}
+        className={classNames(defaultcss.all, sty.freeBox)}
+      >
+        <InputComponent
+          data-plasmic-name={"timeInput"}
+          data-plasmic-override={overrides.timeInput}
+          label={
+            <div
+              className={classNames(
+                defaultcss.all,
+                defaultcss.__wab_text,
+                sty.text__hWlXq
+              )}
+            >
+              {"Start Time"}
+            </div>
+          }
+          type={"time"}
+        />
+
+        <InputComponent
+          data-plasmic-name={"timeInput2"}
+          data-plasmic-override={overrides.timeInput2}
+          label={
+            <div
+              className={classNames(
+                defaultcss.all,
+                defaultcss.__wab_text,
+                sty.text__wXfJz
+              )}
+            >
+              {"End Time"}
+            </div>
+          }
+          type={"time"}
+        />
+      </p.Stack>
 
       <InputComponent
         data-plasmic-name={"typeInput"}
@@ -65,7 +107,7 @@ function PlasmicMeetingRoomFormFields__RenderFunc(props) {
               sty.text__vbbZ3
             )}
           >
-            {"Meeting Type"}
+            {"Add-Ons"}
           </div>
         }
         type={"checkbox"}
@@ -107,6 +149,9 @@ const PlasmicDescendants = {
     "root",
     "roomInput",
     "dateInput",
+    "freeBox",
+    "timeInput",
+    "timeInput2",
     "typeInput",
     "descriptionInput",
     "approverInput"
@@ -114,6 +159,9 @@ const PlasmicDescendants = {
 
   roomInput: ["roomInput"],
   dateInput: ["dateInput"],
+  freeBox: ["freeBox", "timeInput", "timeInput2"],
+  timeInput: ["timeInput"],
+  timeInput2: ["timeInput2"],
   typeInput: ["typeInput"],
   descriptionInput: ["descriptionInput"],
   approverInput: ["approverInput"]
@@ -152,6 +200,9 @@ export const PlasmicMeetingRoomFormFields = Object.assign(
     // Helper components rendering sub-elements
     roomInput: makeNodeComponent("roomInput"),
     dateInput: makeNodeComponent("dateInput"),
+    freeBox: makeNodeComponent("freeBox"),
+    timeInput: makeNodeComponent("timeInput"),
+    timeInput2: makeNodeComponent("timeInput2"),
     typeInput: makeNodeComponent("typeInput"),
     descriptionInput: makeNodeComponent("descriptionInput"),
     approverInput: makeNodeComponent("approverInput"),

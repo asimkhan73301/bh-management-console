@@ -1,0 +1,98 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+.text__e4XOj {
+  position: relative;
+  color: #061d7b /* plasmic-token: HNlv0A0HQ */;
+  font-weight: 500;
+  font-size: 16px;
+}
+.table:global(.__wab_instance) {
+  position: relative;
+}
+.tableRow__eDpYe:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__aiQqi:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__lxED:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__d6Mt:global(.__wab_instance) {
+  position: relative;
+}
+.tableRow__zkyMt:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__xp4Hj:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__mo7BL:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__zUas:global(.__wab_instance) {
+  position: relative;
+}
+.text___3IIct {
+  width: auto;
+  display: inline-block;
+}
+.tableRow__xs9Cb:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__yqbI:global(.__wab_instance) {
+  position: relative;
+}
+.text__jicnV {
+  width: auto;
+  display: inline-block;
+}
+.tableCell__r3T4N:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__if2Vt:global(.__wab_instance) {
+  position: relative;
+}
+.tableRow__pXtcU:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__bhPe1:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__p4KFw:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__zw02N:global(.__wab_instance) {
+  position: relative;
+}
+.tableRow__taBd:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__j00Ue:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__d4QFu:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__cpPMe:global(.__wab_instance) {
+  position: relative;
+}
+.text__il2Rh {
+  height: auto;
+  width: auto;
+  display: inline-block;
+}

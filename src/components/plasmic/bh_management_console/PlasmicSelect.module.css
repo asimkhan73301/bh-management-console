@@ -67,61 +67,113 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
   width: 100%;
   min-width: 0;
+}
+.contentContainer > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-width: 0;
+}
+.contentContainer__icon > :global(.__wab_flex-container) {
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+  margin-top: calc(0px - 0px);
+  height: calc(100% + 0px);
+}
+.contentContainer__icon > :global(.__wab_flex-container) > *,
+.contentContainer__icon
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > *,
+.contentContainer__icon > :global(.__wab_flex-container) > picture > img,
+.contentContainer__icon
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 8px;
+  margin-top: 0px;
 }
 .root:hover:not(:focus-within) .contentContainer {
   outline: none;
 }
-.slotSelectedContent {
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.svg__pjl6M {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  flex-shrink: 0;
+  height: 1em;
+}
+.slotTargetSelectedContent {
   white-space: pre;
   font-size: 14px;
 }
-.slotSelectedContent > .__wab_text,
-.slotSelectedContent > .__wab_slot-string-wrapper,
-.slotSelectedContent > .__wab_slot > .__wab_text,
-.slotSelectedContent > .__wab_slot > .__wab_slot-string-wrapper,
-.slotSelectedContent > .__wab_slot > .__wab_slot > .__wab_text,
-.slotSelectedContent > .__wab_slot > .__wab_slot > .__wab_slot-string-wrapper,
-.slotSelectedContent > .__wab_slot > .__wab_slot > .__wab_slot > .__wab_text,
-.slotSelectedContent
+.slotTargetSelectedContent > .__wab_text,
+.slotTargetSelectedContent > .__wab_slot-string-wrapper,
+.slotTargetSelectedContent > .__wab_slot > .__wab_text,
+.slotTargetSelectedContent > .__wab_slot > .__wab_slot-string-wrapper,
+.slotTargetSelectedContent > .__wab_slot > .__wab_slot > .__wab_text,
+.slotTargetSelectedContent
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot-string-wrapper,
+.slotTargetSelectedContent
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_text,
+.slotTargetSelectedContent
   > .__wab_slot
   > .__wab_slot
   > .__wab_slot
   > .__wab_slot-string-wrapper {
   text-overflow: ellipsis;
 }
-.slotSelectedContent > *,
-.slotSelectedContent > .__wab_slot > *,
-.slotSelectedContent > .__wab_slot > .__wab_slot > *,
-.slotSelectedContent > .__wab_slot > .__wab_slot > .__wab_slot > *,
-.slotSelectedContent > picture > img,
-.slotSelectedContent > .__wab_slot > picture > img,
-.slotSelectedContent > .__wab_slot > .__wab_slot > picture > img,
-.slotSelectedContent > .__wab_slot > .__wab_slot > .__wab_slot > picture > img {
+.slotTargetSelectedContent > *,
+.slotTargetSelectedContent > .__wab_slot > *,
+.slotTargetSelectedContent > .__wab_slot > .__wab_slot > *,
+.slotTargetSelectedContent > .__wab_slot > .__wab_slot > .__wab_slot > *,
+.slotTargetSelectedContent > picture > img,
+.slotTargetSelectedContent > .__wab_slot > picture > img,
+.slotTargetSelectedContent > .__wab_slot > .__wab_slot > picture > img,
+.slotTargetSelectedContent
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > picture
+  > img {
   overflow: hidden;
 }
-.root:focus-within .slotSelectedContent > *,
-.root:focus-within .slotSelectedContent > .__wab_slot > *,
-.root:focus-within .slotSelectedContent > .__wab_slot > .__wab_slot > *,
+.root:focus-within .slotTargetSelectedContent > *,
+.root:focus-within .slotTargetSelectedContent > .__wab_slot > *,
+.root:focus-within .slotTargetSelectedContent > .__wab_slot > .__wab_slot > *,
 .root:focus-within
-  .slotSelectedContent
+  .slotTargetSelectedContent
   > .__wab_slot
   > .__wab_slot
   > .__wab_slot
   > *,
-.root:focus-within .slotSelectedContent > picture > img,
-.root:focus-within .slotSelectedContent > .__wab_slot > picture > img,
+.root:focus-within .slotTargetSelectedContent > picture > img,
+.root:focus-within .slotTargetSelectedContent > .__wab_slot > picture > img,
 .root:focus-within
-  .slotSelectedContent
+  .slotTargetSelectedContent
   > .__wab_slot
   > .__wab_slot
   > picture
   > img,
 .root:focus-within
-  .slotSelectedContent
+  .slotTargetSelectedContent
   > .__wab_slot
   > .__wab_slot
   > .__wab_slot
@@ -129,32 +181,37 @@
   > img {
   outline: none;
 }
-.slotPlaceholder {
+.slotTargetPlaceholder {
   white-space: pre;
   color: #00000080;
 }
-.slotPlaceholder > .__wab_text,
-.slotPlaceholder > .__wab_slot-string-wrapper,
-.slotPlaceholder > .__wab_slot > .__wab_text,
-.slotPlaceholder > .__wab_slot > .__wab_slot-string-wrapper,
-.slotPlaceholder > .__wab_slot > .__wab_slot > .__wab_text,
-.slotPlaceholder > .__wab_slot > .__wab_slot > .__wab_slot-string-wrapper,
-.slotPlaceholder > .__wab_slot > .__wab_slot > .__wab_slot > .__wab_text,
-.slotPlaceholder
+.slotTargetPlaceholder > .__wab_text,
+.slotTargetPlaceholder > .__wab_slot-string-wrapper,
+.slotTargetPlaceholder > .__wab_slot > .__wab_text,
+.slotTargetPlaceholder > .__wab_slot > .__wab_slot-string-wrapper,
+.slotTargetPlaceholder > .__wab_slot > .__wab_slot > .__wab_text,
+.slotTargetPlaceholder > .__wab_slot > .__wab_slot > .__wab_slot-string-wrapper,
+.slotTargetPlaceholder > .__wab_slot > .__wab_slot > .__wab_slot > .__wab_text,
+.slotTargetPlaceholder
   > .__wab_slot
   > .__wab_slot
   > .__wab_slot
   > .__wab_slot-string-wrapper {
   text-overflow: ellipsis;
 }
-.slotPlaceholder > *,
-.slotPlaceholder > .__wab_slot > *,
-.slotPlaceholder > .__wab_slot > .__wab_slot > *,
-.slotPlaceholder > .__wab_slot > .__wab_slot > .__wab_slot > *,
-.slotPlaceholder > picture > img,
-.slotPlaceholder > .__wab_slot > picture > img,
-.slotPlaceholder > .__wab_slot > .__wab_slot > picture > img,
-.slotPlaceholder > .__wab_slot > .__wab_slot > .__wab_slot > picture > img {
+.slotTargetPlaceholder > *,
+.slotTargetPlaceholder > .__wab_slot > *,
+.slotTargetPlaceholder > .__wab_slot > .__wab_slot > *,
+.slotTargetPlaceholder > .__wab_slot > .__wab_slot > .__wab_slot > *,
+.slotTargetPlaceholder > picture > img,
+.slotTargetPlaceholder > .__wab_slot > picture > img,
+.slotTargetPlaceholder > .__wab_slot > .__wab_slot > picture > img,
+.slotTargetPlaceholder
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > picture
+  > img {
   overflow: hidden;
 }
 .dropdownIcon {

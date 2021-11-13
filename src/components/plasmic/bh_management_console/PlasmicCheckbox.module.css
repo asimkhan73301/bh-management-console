@@ -39,11 +39,6 @@
   background: #ffffff;
   border: 1px solid #3950ae /* plasmic-token: 9Jx6sgv6X */;
 }
-.root .freeBox_____focusVisibleWithin {
-  outline: none;
-  border-style: dashed;
-  border-color: #3950ae /* plasmic-token: 9Jx6sgv6X */;
-}
 .root:focus-within .freeBox {
   transition-property: box-shadow, background;
   transition-duration: 0.2s, 0.2s;
@@ -51,6 +46,11 @@
   background: #ffffff;
   outline: none;
   border: 1px solid #3950ae /* plasmic-token: 9Jx6sgv6X */;
+}
+.root .freeBox_____focusVisibleWithin {
+  outline: none;
+  border-style: dashed;
+  border-color: #3950ae /* plasmic-token: 9Jx6sgv6X */;
 }
 .svg {
   position: relative;
@@ -80,52 +80,56 @@
 .root .labelContainer_____focusVisibleWithin {
   outline: none;
 }
-.slotChildren {
+.slotTargetChildren {
   white-space: pre;
 }
-.slotChildren > .__wab_text,
-.slotChildren > .__wab_slot-string-wrapper,
-.slotChildren > .__wab_slot > .__wab_text,
-.slotChildren > .__wab_slot > .__wab_slot-string-wrapper,
-.slotChildren > .__wab_slot > .__wab_slot > .__wab_text,
-.slotChildren > .__wab_slot > .__wab_slot > .__wab_slot-string-wrapper,
-.slotChildren > .__wab_slot > .__wab_slot > .__wab_slot > .__wab_text,
-.slotChildren
+.slotTargetChildren > .__wab_text,
+.slotTargetChildren > .__wab_slot-string-wrapper,
+.slotTargetChildren > .__wab_slot > .__wab_text,
+.slotTargetChildren > .__wab_slot > .__wab_slot-string-wrapper,
+.slotTargetChildren > .__wab_slot > .__wab_slot > .__wab_text,
+.slotTargetChildren > .__wab_slot > .__wab_slot > .__wab_slot-string-wrapper,
+.slotTargetChildren > .__wab_slot > .__wab_slot > .__wab_slot > .__wab_text,
+.slotTargetChildren
   > .__wab_slot
   > .__wab_slot
   > .__wab_slot
   > .__wab_slot-string-wrapper {
   text-overflow: ellipsis;
 }
-.slotChildren > *,
-.slotChildren > .__wab_slot > *,
-.slotChildren > .__wab_slot > .__wab_slot > *,
-.slotChildren > .__wab_slot > .__wab_slot > .__wab_slot > *,
-.slotChildren > picture > img,
-.slotChildren > .__wab_slot > picture > img,
-.slotChildren > .__wab_slot > .__wab_slot > picture > img,
-.slotChildren > .__wab_slot > .__wab_slot > .__wab_slot > picture > img {
+.slotTargetChildren > *,
+.slotTargetChildren > .__wab_slot > *,
+.slotTargetChildren > .__wab_slot > .__wab_slot > *,
+.slotTargetChildren > .__wab_slot > .__wab_slot > .__wab_slot > *,
+.slotTargetChildren > picture > img,
+.slotTargetChildren > .__wab_slot > picture > img,
+.slotTargetChildren > .__wab_slot > .__wab_slot > picture > img,
+.slotTargetChildren > .__wab_slot > .__wab_slot > .__wab_slot > picture > img {
   overflow: hidden;
 }
-.root .slotChildren_____focusVisibleWithin > *,
-.root .slotChildren_____focusVisibleWithin > .__wab_slot > *,
-.root .slotChildren_____focusVisibleWithin > .__wab_slot > .__wab_slot > *,
+.root .slotTargetChildren_____focusVisibleWithin > *,
+.root .slotTargetChildren_____focusVisibleWithin > .__wab_slot > *,
 .root
-  .slotChildren_____focusVisibleWithin
+  .slotTargetChildren_____focusVisibleWithin
+  > .__wab_slot
+  > .__wab_slot
+  > *,
+.root
+  .slotTargetChildren_____focusVisibleWithin
   > .__wab_slot
   > .__wab_slot
   > .__wab_slot
   > *,
-.root .slotChildren_____focusVisibleWithin > picture > img,
-.root .slotChildren_____focusVisibleWithin > .__wab_slot > picture > img,
+.root .slotTargetChildren_____focusVisibleWithin > picture > img,
+.root .slotTargetChildren_____focusVisibleWithin > .__wab_slot > picture > img,
 .root
-  .slotChildren_____focusVisibleWithin
+  .slotTargetChildren_____focusVisibleWithin
   > .__wab_slot
   > .__wab_slot
   > picture
   > img,
 .root
-  .slotChildren_____focusVisibleWithin
+  .slotTargetChildren_____focusVisibleWithin
   > .__wab_slot
   > .__wab_slot
   > .__wab_slot

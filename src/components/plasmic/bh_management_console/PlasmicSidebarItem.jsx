@@ -52,8 +52,12 @@ function PlasmicSidebarItem__RenderFunc(props) {
         ),
 
         value: args.slot,
-        className: classNames(sty.slotSlot, {
-          [sty.slotSlot__selected]: hasVariant(variants, "selected", "selected")
+        className: classNames(sty.slotTargetSlot, {
+          [sty.slotTargetSlot__selected]: hasVariant(
+            variants,
+            "selected",
+            "selected"
+          )
         })
       })}
 
@@ -65,14 +69,14 @@ function PlasmicSidebarItem__RenderFunc(props) {
         <a
           data-plasmic-name={"link"}
           data-plasmic-override={overrides.link}
-          className={classNames(defaultcss.all, sty.link)}
+          className={classNames(defaultcss.a, sty.link)}
           href={args.destination}
         >
           {p.renderPlasmicSlot({
             defaultContents: "Some link text",
             value: args.slot2,
-            className: classNames(sty.slotSlot2, {
-              [sty.slotSlot2__selected]: hasVariant(
+            className: classNames(sty.slotTargetSlot2, {
+              [sty.slotTargetSlot2__selected]: hasVariant(
                 variants,
                 "selected",
                 "selected"

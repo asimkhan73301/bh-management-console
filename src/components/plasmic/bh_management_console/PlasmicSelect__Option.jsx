@@ -71,14 +71,14 @@ function PlasmicSelect__Option__RenderFunc(props) {
         {p.renderPlasmicSlot({
           defaultContents: "Option",
           value: args.children,
-          className: classNames(sty.slotChildren, {
-            [sty.slotChildren__isHighlighted]: hasVariant(
+          className: classNames(sty.slotTargetChildren, {
+            [sty.slotTargetChildren__isHighlighted]: hasVariant(
               variants,
               "isHighlighted",
               "isHighlighted"
             ),
 
-            [sty.slotChildren__isSelected]: hasVariant(
+            [sty.slotTargetChildren__isSelected]: hasVariant(
               variants,
               "isSelected",
               "isSelected"

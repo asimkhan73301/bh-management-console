@@ -24,7 +24,10 @@ import * as sty from "./PlasmicFormComponent.module.css"; // plasmic-import: ZRO
 
 export const PlasmicFormComponent__VariantProps = new Array();
 
-export const PlasmicFormComponent__ArgProps = new Array("fieldsWrapper");
+export const PlasmicFormComponent__ArgProps = new Array(
+  "fieldsWrapper",
+  "redirectOnSubmitLink"
+);
 
 function PlasmicFormComponent__RenderFunc(props) {
   const { variants, args, overrides, forNode, dataFetches } = props;

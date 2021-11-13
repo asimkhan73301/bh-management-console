@@ -9,7 +9,9 @@
 // Plasmic Project: iiynbYDu6GiGaNNDvPQoVR
 // Component: gb4IIit3yv
 import * as React from "react";
+import * as p from "@plasmicapp/react-web";
 import {
+  hasVariant,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts
@@ -18,14 +20,16 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "../blank_project/plasmic_blank_project.module.css"; // plasmic-import: iiynbYDu6GiGaNNDvPQoVR/projectcss
 import * as sty from "./PlasmicTextInput.module.css"; // plasmic-import: gb4IIit3yv/css
+import Icons8SearchsvgIcon from "./icons/PlasmicIcon__Icons8Searchsvg"; // plasmic-import: tdjoboKFAS/icon
 
-export const PlasmicTextInput__VariantProps = new Array();
+export const PlasmicTextInput__VariantProps = new Array("icon", "center");
 
 export const PlasmicTextInput__ArgProps = new Array(
   "placeholder",
   "value",
   "size",
-  "disabled"
+  "disabled",
+  "children"
 );
 
 function PlasmicTextInput__RenderFunc(props) {
@@ -36,12 +40,38 @@ function PlasmicTextInput__RenderFunc(props) {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
+        [sty.root__icon]: hasVariant(variants, "icon", "icon")
+      })}
     >
+      {(hasVariant(variants, "icon", "icon") ? true : false) ? (
+        <div
+          data-plasmic-name={"iconWrapper"}
+          data-plasmic-override={overrides.iconWrapper}
+          className={classNames(defaultcss.all, sty.iconWrapper, {
+            [sty.iconWrapper__icon]: hasVariant(variants, "icon", "icon")
+          })}
+        >
+          {p.renderPlasmicSlot({
+            defaultContents: (
+              <Icons8SearchsvgIcon
+                className={classNames(defaultcss.all, sty.svg__teyTl)}
+                role={"img"}
+              />
+            ),
+
+            value: args.children
+          })}
+        </div>
+      ) : null}
+
       <input
         data-plasmic-name={"textbox"}
         data-plasmic-override={overrides.textbox}
-        className={classNames(defaultcss.input, sty.textbox)}
+        className={classNames(defaultcss.input, sty.textbox, {
+          [sty.textbox__center]: hasVariant(variants, "center", "center"),
+          [sty.textbox__icon]: hasVariant(variants, "icon", "icon")
+        })}
         disabled={args.disabled}
         placeholder={args.placeholder}
         size={args.size}
@@ -53,7 +83,8 @@ function PlasmicTextInput__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "textbox"],
+  root: ["root", "iconWrapper", "textbox"],
+  iconWrapper: ["iconWrapper"],
   textbox: ["textbox"]
 };
 
@@ -88,6 +119,7 @@ export const PlasmicTextInput = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    iconWrapper: makeNodeComponent("iconWrapper"),
     textbox: makeNodeComponent("textbox"),
     // Metadata about props expected for PlasmicTextInput
     internalVariantProps: PlasmicTextInput__VariantProps,

@@ -1,0 +1,92 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  min-width: 0;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  margin-top: calc(0px - 16px);
+  height: calc(100% + 16px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 16px;
+}
+.userProfile:global(.__wab_instance) {
+  position: relative;
+}
+.img {
+  position: relative;
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.img > .__wab_img-spacer > img {
+  object-fit: cover;
+}
+.text__qgavh {
+  color: #0d0c22 /* plasmic-token: kBDGa6r9j */;
+  font-weight: 500;
+  font-size: 24px;
+}
+.form {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 400px;
+  height: auto;
+}
+.form > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-top: calc(0px - 8px);
+  height: calc(100% + 8px);
+}
+.form > :global(.__wab_flex-container) > *,
+.form > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.form > :global(.__wab_flex-container) > picture > img,
+.form > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 8px;
+}
+.inputComponent__iac6:global(.__wab_instance) {
+  position: relative;
+}
+.inputComponent__c9P5:global(.__wab_instance) {
+  position: relative;
+}
+.inputComponent__g91M:global(.__wab_instance) {
+  position: relative;
+}
+.text__k9Sw1 {
+  height: auto;
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: calc(16px + 8px) !important;
+  min-width: 0;
+}
+.button:global(.__wab_instance) {
+  width: 100%;
+  min-width: 0;
+}
+.text__bvHEk {
+  height: auto;
+}

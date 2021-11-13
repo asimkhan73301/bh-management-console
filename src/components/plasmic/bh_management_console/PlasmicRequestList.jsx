@@ -36,7 +36,13 @@ function PlasmicRequestList__RenderFunc(props) {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       hasGap={true}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
+        [sty.root__userContext]: hasVariant(
+          variants,
+          "userContext",
+          "userContext"
+        )
+      })}
     >
       <ListItem
         adminContext={
@@ -60,6 +66,14 @@ function PlasmicRequestList__RenderFunc(props) {
           hasVariant(variants, "userContext", "userContext")
             ? "editable"
             : undefined
+        }
+        status={
+          hasVariant(variants, "userContext", "userContext")
+            ? "approved"
+            : "approved"
+        }
+        view={
+          hasVariant(variants, "userContext", "userContext") ? "row" : undefined
         }
       />
 
@@ -87,6 +101,14 @@ function PlasmicRequestList__RenderFunc(props) {
             : undefined
         }
         itemType={"fleet"}
+        status={
+          hasVariant(variants, "userContext", "userContext")
+            ? "rejected"
+            : "rejected"
+        }
+        view={
+          hasVariant(variants, "userContext", "userContext") ? "row" : undefined
+        }
       />
 
       <ListItem
@@ -113,6 +135,14 @@ function PlasmicRequestList__RenderFunc(props) {
             : undefined
         }
         itemType={"meetingRoom"}
+        status={
+          hasVariant(variants, "userContext", "userContext")
+            ? "rejected"
+            : undefined
+        }
+        view={
+          hasVariant(variants, "userContext", "userContext") ? "row" : undefined
+        }
       />
 
       <ListItem
@@ -139,6 +169,9 @@ function PlasmicRequestList__RenderFunc(props) {
             : undefined
         }
         itemType={"meetingRoom"}
+        view={
+          hasVariant(variants, "userContext", "userContext") ? "row" : undefined
+        }
       />
 
       <ListItem
@@ -164,6 +197,9 @@ function PlasmicRequestList__RenderFunc(props) {
             ? "editable"
             : undefined
         }
+        view={
+          hasVariant(variants, "userContext", "userContext") ? "row" : undefined
+        }
       />
 
       <ListItem
@@ -188,6 +224,9 @@ function PlasmicRequestList__RenderFunc(props) {
           hasVariant(variants, "userContext", "userContext")
             ? "editable"
             : undefined
+        }
+        view={
+          hasVariant(variants, "userContext", "userContext") ? "row" : undefined
         }
       />
 
@@ -215,6 +254,9 @@ function PlasmicRequestList__RenderFunc(props) {
             : undefined
         }
         itemType={"fleet"}
+        view={
+          hasVariant(variants, "userContext", "userContext") ? "row" : undefined
+        }
       />
 
       <ListItem
@@ -241,6 +283,9 @@ function PlasmicRequestList__RenderFunc(props) {
             : undefined
         }
         itemType={"meetingRoom"}
+        view={
+          hasVariant(variants, "userContext", "userContext") ? "row" : undefined
+        }
       />
     </p.Stack>
   );

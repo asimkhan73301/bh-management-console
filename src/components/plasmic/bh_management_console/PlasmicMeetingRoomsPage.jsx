@@ -15,7 +15,7 @@ import {
   deriveRenderOpts
 } from "@plasmicapp/react-web";
 import UserLayout from "../../UserLayout"; // plasmic-import: TF4eeP5pkV/component
-import MeetingRoomList from "../../MeetingRoomList"; // plasmic-import: trbmvASZWn/component
+import MeetingRoomForm from "../../MeetingRoomForm"; // plasmic-import: YQ4NazOClY/component
 import Sidebar from "../../Sidebar"; // plasmic-import: 2ETjiGbh3p/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
@@ -69,16 +69,17 @@ function PlasmicMeetingRoomsPage__RenderFunc(props) {
                   sty.text__u9PCp
                 )}
               >
-                {"List"}
+                {"Add Meeting Room"}
               </div>
             </React.Fragment>
           }
           className={classNames("__wab_instance", sty.userLayout)}
+          hideFilters={"hideFilters"}
           mainWrapper={
-            <MeetingRoomList
-              data-plasmic-name={"meetingRoomList"}
-              data-plasmic-override={overrides.meetingRoomList}
-              className={classNames("__wab_instance", sty.meetingRoomList)}
+            <MeetingRoomForm
+              data-plasmic-name={"meetingRoomForm"}
+              data-plasmic-override={overrides.meetingRoomForm}
+              className={classNames("__wab_instance", sty.meetingRoomForm)}
             />
           }
         >
@@ -94,9 +95,9 @@ function PlasmicMeetingRoomsPage__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "userLayout", "meetingRoomList", "sidebar"],
-  userLayout: ["userLayout", "meetingRoomList", "sidebar"],
-  meetingRoomList: ["meetingRoomList"],
+  root: ["root", "userLayout", "meetingRoomForm", "sidebar"],
+  userLayout: ["userLayout", "meetingRoomForm", "sidebar"],
+  meetingRoomForm: ["meetingRoomForm"],
   sidebar: ["sidebar"]
 };
 
@@ -132,7 +133,7 @@ export const PlasmicMeetingRoomsPage = Object.assign(
   {
     // Helper components rendering sub-elements
     userLayout: makeNodeComponent("userLayout"),
-    meetingRoomList: makeNodeComponent("meetingRoomList"),
+    meetingRoomForm: makeNodeComponent("meetingRoomForm"),
     sidebar: makeNodeComponent("sidebar"),
     // Metadata about props expected for PlasmicMeetingRoomsPage
     internalVariantProps: PlasmicMeetingRoomsPage__VariantProps,

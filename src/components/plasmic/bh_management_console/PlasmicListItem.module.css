@@ -5,6 +5,11 @@
   width: 300px;
   height: 350px;
 }
+.root__view_row {
+  height: auto;
+  width: 100%;
+  min-width: 0;
+}
 .freeBox__sJq71 {
   display: flex;
   position: relative;
@@ -54,6 +59,14 @@
   margin-left: 8px;
   margin-top: 0px;
 }
+.root__adminContext_status_approved:hover
+  .freeBox__adminContext_status_approved__sJq71S4It5Nj31U {
+  display: none;
+}
+.root__status_rejected_adminContext:hover
+  .freeBox__status_rejected_adminContext__sJq71MTtQS4It5 {
+  display: none;
+}
 .rejectButton:global(.__wab_instance) {
   position: relative;
 }
@@ -64,6 +77,9 @@
   position: relative;
   height: 100%;
   min-height: 0;
+}
+.card__view_row:global(.__wab_instance) {
+  display: none;
 }
 .freeBox__nFH8 {
   display: flex;
@@ -138,14 +154,20 @@
   text-transform: uppercase;
 }
 .actions {
-  display: none;
   position: relative;
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
+  display: none;
 }
 .actions__editable {
   display: none;
+}
+.actions__status_approved {
+  display: flex;
+}
+.actions__status_rejected {
+  display: flex;
 }
 .root__editable:hover .actions__editable {
   display: flex;
@@ -159,12 +181,30 @@
   width: 16px;
   height: 16px;
 }
+.badge__cGeLu:global(.__wab_instance) {
+  position: relative;
+}
+.img__lWgGd {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.img__lWgGd > picture > img {
+  object-fit: cover;
+}
+.img__lWgGd > .__wab_img-spacer > img {
+  object-fit: cover;
+}
+.text__status_rejected___2BdkfMTtQ {
+  height: auto;
+}
 .freeBox__sfcGl {
-  display: none;
   position: relative;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  display: none;
   border-bottom: 1px solid #3950ae1a /* plasmic-token: qXrq6c7hE */;
 }
 .freeBox__adminContext__sfcGlS4It5 {
@@ -241,11 +281,28 @@
   align-items: stretch;
   min-width: 0;
 }
+.columns > :nth-child(2n + 1) {
+  width: calc((100% - 2 * 0px) * 6 / 12);
+}
+.columns > :nth-child(2n + 2) {
+  width: calc((100% - 2 * 0px) * 6 / 12);
+}
 @media (min-width: 0px) and (max-width: 768px) {
   .columns {
     flex-direction: column;
     flex-column-gap: 0px;
   }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .columns > :nth-child(1n + 1) {
+    width: calc((100% - 1 * 0px) * 12 / 12);
+  }
+}
+.columns__itemType_fleet > :nth-child(2n + 1) {
+  width: calc((100% - 2 * 0px) * 6 / 12);
+}
+.columns__itemType_fleet > :nth-child(2n + 2) {
+  width: calc((100% - 2 * 0px) * 6 / 12);
 }
 .column__g8Iu {
   display: flex;
@@ -452,6 +509,18 @@
 .badge__itemType_fleet__sAxf4UQr6:global(.__wab_instance) {
   display: none;
 }
+.img__e7Yxr {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.img__e7Yxr > picture > img {
+  object-fit: cover;
+}
+.img__e7Yxr > .__wab_img-spacer > img {
+  object-fit: cover;
+}
 .badge__cu2WD:global(.__wab_instance) {
   position: relative;
 }
@@ -464,74 +533,21 @@
 .text__jwJuR {
   height: auto;
 }
-.timeInfo {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-}
-.timeInfo > :global(.__wab_flex-container) {
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
-}
-.timeInfo__itemType_fleet > :global(.__wab_flex-container) {
-  align-items: center;
-  justify-content: flex-start;
-  margin-left: calc(0px - 8px);
-  width: calc(100% + 8px);
-  margin-top: calc(0px - 0px);
-  height: calc(100% + 0px);
-}
-.timeInfo__itemType_fleet > :global(.__wab_flex-container) > *,
-.timeInfo__itemType_fleet
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > *,
-.timeInfo__itemType_fleet > :global(.__wab_flex-container) > picture > img,
-.timeInfo__itemType_fleet
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-left: 8px;
-  margin-top: 0px;
-}
-.timeInfo__itemType_meetingRoom > :global(.__wab_flex-container) {
-  align-items: center;
-  justify-content: flex-start;
-  margin-left: calc(0px - 8px);
-  width: calc(100% + 8px);
-  margin-top: calc(0px - 0px);
-  height: calc(100% + 0px);
-}
-.timeInfo__itemType_meetingRoom > :global(.__wab_flex-container) > *,
-.timeInfo__itemType_meetingRoom
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > *,
-.timeInfo__itemType_meetingRoom
-  > :global(.__wab_flex-container)
-  > picture
-  > img,
-.timeInfo__itemType_meetingRoom
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-left: 8px;
-  margin-top: 0px;
-}
-.svg___6QboC {
-  position: relative;
+.img__nc1Ap {
+  width: 40px;
+  height: 40px;
   object-fit: cover;
-  width: 1em;
-  flex-shrink: 0;
-  height: 1em;
+  border-radius: 50%;
 }
-.text__hv5ZV {
+.img__nc1Ap > picture > img {
+  object-fit: cover;
+}
+.img__nc1Ap > .__wab_img-spacer > img {
+  object-fit: cover;
+}
+.timeInfo:global(.__wab_instance) {
   position: relative;
 }
-.text__itemType_fleet__hv5ZVUQr6 {
-  font-size: 12px;
-  color: #0d0c22 /* plasmic-token: kBDGa6r9j */;
+.listRow:global(.__wab_instance) {
+  position: relative;
 }

@@ -18,12 +18,22 @@ import {
 } from "@plasmicapp/react-web";
 import Sidebar from "../../Sidebar"; // plasmic-import: 2ETjiGbh3p/component
 import Dialog from "../../Dialog"; // plasmic-import: E5fsqxpowC/component
+import TextInput from "../../TextInput"; // plasmic-import: gb4IIit3yv/component
+import InputComponent from "../../InputComponent"; // plasmic-import: qNK1ZRC_DP/component
+import SelectInput from "../../SelectInput"; // plasmic-import: FBgIYvMF44/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "../blank_project/plasmic_blank_project.module.css"; // plasmic-import: iiynbYDu6GiGaNNDvPQoVR/projectcss
 import * as sty from "./PlasmicAdminLayout.module.css"; // plasmic-import: 046Osy-48bS/css
+import Icons8SearchsvgIcon from "./icons/PlasmicIcon__Icons8Searchsvg"; // plasmic-import: tdjoboKFAS/icon
+import Approval1SvgIcon from "./icons/PlasmicIcon__Approval1Svg"; // plasmic-import: C_ljohGzuD/icon
+import ApprovalsvgIcon from "./icons/PlasmicIcon__Approvalsvg"; // plasmic-import: muIIwCg07L/icon
 
-export const PlasmicAdminLayout__VariantProps = new Array("hideAddButton");
+export const PlasmicAdminLayout__VariantProps = new Array(
+  "hideAddButton",
+  "hideFilters",
+  "type"
+);
 
 export const PlasmicAdminLayout__ArgProps = new Array(
   "mainWrapper",
@@ -50,6 +60,7 @@ function PlasmicAdminLayout__RenderFunc(props) {
         {p.renderPlasmicSlot({
           defaultContents: (
             <Sidebar
+              admin={"admin"}
               className={classNames("__wab_instance", sty.sidebar__oARh6)}
             />
           ),
@@ -134,6 +145,124 @@ function PlasmicAdminLayout__RenderFunc(props) {
             ) : null}
           </p.Stack>
 
+          {(
+            hasVariant(variants, "hideFilters", "hideFilters") ? true : true
+          ) ? (
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"filtersWrapper"}
+              data-plasmic-override={overrides.filtersWrapper}
+              hasGap={true}
+              className={classNames(defaultcss.all, sty.filtersWrapper, {
+                [sty.filtersWrapper__hideFilters]: hasVariant(
+                  variants,
+                  "hideFilters",
+                  "hideFilters"
+                ),
+
+                [sty.filtersWrapper__type_reporting]: hasVariant(
+                  variants,
+                  "type",
+                  "reporting"
+                )
+              })}
+            >
+              {(hasVariant(variants, "type", "reporting") ? true : true) ? (
+                <TextInput
+                  data-plasmic-name={"textInput"}
+                  data-plasmic-override={overrides.textInput}
+                  className={classNames("__wab_instance", sty.textInput, {
+                    [sty.textInput__type_reporting]: hasVariant(
+                      variants,
+                      "type",
+                      "reporting"
+                    )
+                  })}
+                  icon={"icon"}
+                >
+                  <Icons8SearchsvgIcon
+                    className={classNames(defaultcss.all, sty.svg___4JOk)}
+                    role={"img"}
+                  />
+                </TextInput>
+              ) : null}
+              {(hasVariant(variants, "type", "reporting") ? true : false) ? (
+                <div
+                  className={classNames(defaultcss.all, sty.freeBox__eN5B5, {
+                    [sty.freeBox__type_reporting__eN5B5LnCaL]: hasVariant(
+                      variants,
+                      "type",
+                      "reporting"
+                    )
+                  })}
+                >
+                  <InputComponent
+                    data-plasmic-name={"dateFilter"}
+                    data-plasmic-override={overrides.dateFilter}
+                    className={classNames("__wab_instance", sty.dateFilter, {
+                      [sty.dateFilter__type_reporting]: hasVariant(
+                        variants,
+                        "type",
+                        "reporting"
+                      )
+                    })}
+                    noLabel={"noLabel"}
+                    type={"dateRange"}
+                  />
+                </div>
+              ) : null}
+
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(defaultcss.all, sty.freeBox__eme5K)}
+              >
+                {(hasVariant(variants, "type", "reporting") ? true : true) ? (
+                  <SelectInput
+                    data-plasmic-name={"statusFilter"}
+                    data-plasmic-override={overrides.statusFilter}
+                    className={classNames("__wab_instance", sty.statusFilter, {
+                      [sty.statusFilter__type_reporting]: hasVariant(
+                        variants,
+                        "type",
+                        "reporting"
+                      )
+                    })}
+                    icon={"icon"}
+                    placeholder={"Select All"}
+                  >
+                    <Approval1SvgIcon
+                      className={classNames(defaultcss.all, sty.svg___7S8A5)}
+                      role={"img"}
+                    />
+                  </SelectInput>
+                ) : null}
+
+                <SelectInput
+                  data-plasmic-name={"requestFilter"}
+                  data-plasmic-override={overrides.requestFilter}
+                  className={classNames("__wab_instance", sty.requestFilter, {
+                    [sty.requestFilter__type_reporting]: hasVariant(
+                      variants,
+                      "type",
+                      "reporting"
+                    )
+                  })}
+                  icon={"icon"}
+                  placeholder={
+                    hasVariant(variants, "type", "reporting")
+                      ? " -- Select Request --"
+                      : "Select All"
+                  }
+                >
+                  <ApprovalsvgIcon
+                    className={classNames(defaultcss.all, sty.svg__wzYap)}
+                    role={"img"}
+                  />
+                </SelectInput>
+              </p.Stack>
+            </p.Stack>
+          ) : null}
           {p.renderPlasmicSlot({
             defaultContents: null,
             value: args.mainWrapper
@@ -145,10 +274,52 @@ function PlasmicAdminLayout__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "content", "mainWrapper", "dialog"],
-  content: ["content", "mainWrapper", "dialog"],
-  mainWrapper: ["mainWrapper", "dialog"],
-  dialog: ["dialog"]
+  root: [
+    "root",
+    "content",
+    "mainWrapper",
+    "dialog",
+    "filtersWrapper",
+    "textInput",
+    "dateFilter",
+    "statusFilter",
+    "requestFilter"
+  ],
+
+  content: [
+    "content",
+    "mainWrapper",
+    "dialog",
+    "filtersWrapper",
+    "textInput",
+    "dateFilter",
+    "statusFilter",
+    "requestFilter"
+  ],
+
+  mainWrapper: [
+    "mainWrapper",
+    "dialog",
+    "filtersWrapper",
+    "textInput",
+    "dateFilter",
+    "statusFilter",
+    "requestFilter"
+  ],
+
+  dialog: ["dialog"],
+  filtersWrapper: [
+    "filtersWrapper",
+    "textInput",
+    "dateFilter",
+    "statusFilter",
+    "requestFilter"
+  ],
+
+  textInput: ["textInput"],
+  dateFilter: ["dateFilter"],
+  statusFilter: ["statusFilter"],
+  requestFilter: ["requestFilter"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -185,6 +356,11 @@ export const PlasmicAdminLayout = Object.assign(
     content: makeNodeComponent("content"),
     mainWrapper: makeNodeComponent("mainWrapper"),
     dialog: makeNodeComponent("dialog"),
+    filtersWrapper: makeNodeComponent("filtersWrapper"),
+    textInput: makeNodeComponent("textInput"),
+    dateFilter: makeNodeComponent("dateFilter"),
+    statusFilter: makeNodeComponent("statusFilter"),
+    requestFilter: makeNodeComponent("requestFilter"),
     // Metadata about props expected for PlasmicAdminLayout
     internalVariantProps: PlasmicAdminLayout__VariantProps,
     internalArgProps: PlasmicAdminLayout__ArgProps

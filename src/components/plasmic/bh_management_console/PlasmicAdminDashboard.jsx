@@ -30,72 +30,66 @@ function PlasmicAdminDashboard__RenderFunc(props) {
   const { variants, args, overrides, forNode, dataFetches } = props;
   return (
     <React.Fragment>
-      <div className={defaultcss.plasmic_page_wrapper}>
-        <div
-          data-plasmic-name={"root"}
-          data-plasmic-override={overrides.root}
-          data-plasmic-root={true}
-          data-plasmic-for-node={forNode}
-          className={classNames(
-            defaultcss.all,
-            projectcss.root_reset,
-            sty.root
-          )}
-        >
-          <AdminLayout
-            data-plasmic-name={"adminLayout"}
-            data-plasmic-override={overrides.adminLayout}
-            breadcrumbs={
-              <React.Fragment>
-                <div
-                  className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.text__oTyKs
-                  )}
-                >
-                  {"Approvals"}
-                </div>
+      <div
+        data-plasmic-name={"root"}
+        data-plasmic-override={overrides.root}
+        data-plasmic-root={true}
+        data-plasmic-for-node={forNode}
+        className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      >
+        <AdminLayout
+          data-plasmic-name={"adminLayout"}
+          data-plasmic-override={overrides.adminLayout}
+          breadcrumbs={
+            <React.Fragment>
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.text__oTyKs
+                )}
+              >
+                {"Approvals"}
+              </div>
 
-                <div
-                  className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.text__s9RCw
-                  )}
-                >
-                  {">"}
-                </div>
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.text__s9RCw
+                )}
+              >
+                {">"}
+              </div>
 
-                <div
-                  className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.text__otpdm
-                  )}
-                >
-                  {"List"}
-                </div>
-              </React.Fragment>
-            }
-            className={classNames("__wab_instance", sty.adminLayout)}
-            hideAddButton={"hideAddButton"}
-            mainWrapper={
-              <RequestList
-                data-plasmic-name={"requestList"}
-                data-plasmic-override={overrides.requestList}
-                className={classNames("__wab_instance", sty.requestList)}
-              />
-            }
-          >
-            <Sidebar
-              data-plasmic-name={"sidebar"}
-              data-plasmic-override={overrides.sidebar}
-              admin={"admin"}
-              className={classNames("__wab_instance", sty.sidebar)}
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.text__otpdm
+                )}
+              >
+                {"List"}
+              </div>
+            </React.Fragment>
+          }
+          className={classNames("__wab_instance", sty.adminLayout)}
+          hideAddButton={"hideAddButton"}
+          mainWrapper={
+            <RequestList
+              data-plasmic-name={"requestList"}
+              data-plasmic-override={overrides.requestList}
+              className={classNames("__wab_instance", sty.requestList)}
             />
-          </AdminLayout>
-        </div>
+          }
+        >
+          <Sidebar
+            data-plasmic-name={"sidebar"}
+            data-plasmic-override={overrides.sidebar}
+            admin={"admin"}
+            className={classNames("__wab_instance", sty.sidebar)}
+          />
+        </AdminLayout>
       </div>
     </React.Fragment>
   );

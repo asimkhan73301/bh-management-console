@@ -21,9 +21,9 @@ import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-i
 import * as projectcss from "../blank_project/plasmic_blank_project.module.css"; // plasmic-import: iiynbYDu6GiGaNNDvPQoVR/projectcss
 import * as sty from "./PlasmicBadge.module.css"; // plasmic-import: rcqj19I7Oe/css
 
-export const PlasmicBadge__VariantProps = new Array("size");
+export const PlasmicBadge__VariantProps = new Array("size", "color", "kind");
 
-export const PlasmicBadge__ArgProps = new Array("label");
+export const PlasmicBadge__ArgProps = new Array("label", "image");
 
 function PlasmicBadge__RenderFunc(props) {
   const { variants, args, overrides, forNode, dataFetches } = props;
@@ -33,29 +33,78 @@ function PlasmicBadge__RenderFunc(props) {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
+        [sty.root__color_green]: hasVariant(variants, "color", "green"),
+        [sty.root__color_red]: hasVariant(variants, "color", "red")
+      })}
     >
-      <div
+      {(hasVariant(variants, "kind", "icon") ? true : false) ? (
+        <div
+          data-plasmic-name={"imageWrapper"}
+          data-plasmic-override={overrides.imageWrapper}
+          className={classNames(defaultcss.all, sty.imageWrapper, {
+            [sty.imageWrapper__kind_icon]: hasVariant(variants, "kind", "icon"),
+            [sty.imageWrapper__size_small_kind_icon]:
+              hasVariant(variants, "size", "small") &&
+              hasVariant(variants, "kind", "icon")
+          })}
+        >
+          {p.renderPlasmicSlot({
+            defaultContents: (
+              <img
+                alt={""}
+                className={classNames(defaultcss.img, sty.img__o8MH)}
+              />
+            ),
+
+            value: args.image
+          })}
+        </div>
+      ) : null}
+
+      <p.Stack
+        as={"div"}
         data-plasmic-name={"freeBox"}
         data-plasmic-override={overrides.freeBox}
+        hasGap={true}
         className={classNames(defaultcss.all, sty.freeBox, {
+          [sty.freeBox__color_green]: hasVariant(variants, "color", "green"),
+          [sty.freeBox__color_red]: hasVariant(variants, "color", "red"),
+          [sty.freeBox__kind_icon]: hasVariant(variants, "kind", "icon"),
           [sty.freeBox__size_small]: hasVariant(variants, "size", "small")
         })}
       >
         {p.renderPlasmicSlot({
           defaultContents: "Service Kind 1",
           value: args.label,
-          className: classNames(sty.slotLabel, {
-            [sty.slotLabel__size_small]: hasVariant(variants, "size", "small")
+          className: classNames(sty.slotTargetLabel, {
+            [sty.slotTargetLabel__color_red]: hasVariant(
+              variants,
+              "color",
+              "red"
+            ),
+
+            [sty.slotTargetLabel__kind_icon]: hasVariant(
+              variants,
+              "kind",
+              "icon"
+            ),
+
+            [sty.slotTargetLabel__size_small]: hasVariant(
+              variants,
+              "size",
+              "small"
+            )
           })
         })}
-      </div>
+      </p.Stack>
     </div>
   );
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox"],
+  root: ["root", "imageWrapper", "freeBox"],
+  imageWrapper: ["imageWrapper"],
   freeBox: ["freeBox"]
 };
 
@@ -90,6 +139,7 @@ export const PlasmicBadge = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    imageWrapper: makeNodeComponent("imageWrapper"),
     freeBox: makeNodeComponent("freeBox"),
     // Metadata about props expected for PlasmicBadge
     internalVariantProps: PlasmicBadge__VariantProps,

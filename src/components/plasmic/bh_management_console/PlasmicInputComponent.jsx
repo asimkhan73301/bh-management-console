@@ -26,7 +26,7 @@ import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-i
 import * as projectcss from "../blank_project/plasmic_blank_project.module.css"; // plasmic-import: iiynbYDu6GiGaNNDvPQoVR/projectcss
 import * as sty from "./PlasmicInputComponent.module.css"; // plasmic-import: qNK1ZRC_DP/css
 
-export const PlasmicInputComponent__VariantProps = new Array("type");
+export const PlasmicInputComponent__VariantProps = new Array("type", "noLabel");
 
 export const PlasmicInputComponent__ArgProps = new Array(
   "label",
@@ -48,17 +48,31 @@ function PlasmicInputComponent__RenderFunc(props) {
         [sty.root__type_time]: hasVariant(variants, "type", "time")
       })}
     >
-      <div
-        data-plasmic-name={"labelContainer"}
-        data-plasmic-override={overrides.labelContainer}
-        className={classNames(defaultcss.all, sty.labelContainer)}
-      >
-        {p.renderPlasmicSlot({
-          defaultContents: "Enter some text",
-          value: args.label,
-          className: classNames(sty.slotLabel)
-        })}
-      </div>
+      {(hasVariant(variants, "noLabel", "noLabel") ? true : true) ? (
+        <div
+          data-plasmic-name={"labelContainer"}
+          data-plasmic-override={overrides.labelContainer}
+          className={classNames(defaultcss.all, sty.labelContainer, {
+            [sty.labelContainer__noLabel]: hasVariant(
+              variants,
+              "noLabel",
+              "noLabel"
+            )
+          })}
+        >
+          {p.renderPlasmicSlot({
+            defaultContents: "Enter some text",
+            value: args.label,
+            className: classNames(sty.slotTargetLabel, {
+              [sty.slotTargetLabel__noLabel]: hasVariant(
+                variants,
+                "noLabel",
+                "noLabel"
+              )
+            })
+          })}
+        </div>
+      ) : null}
 
       <div
         data-plasmic-name={"inputContainer"}
@@ -88,7 +102,9 @@ function PlasmicInputComponent__RenderFunc(props) {
         })}
       >
         {(
-          hasVariant(variants, "type", "time")
+          hasVariant(variants, "type", "dateRange")
+            ? true
+            : hasVariant(variants, "type", "time")
             ? true
             : hasVariant(variants, "type", "date")
             ? true
@@ -108,6 +124,12 @@ function PlasmicInputComponent__RenderFunc(props) {
                 variants,
                 "type",
                 "checkbox"
+              ),
+
+              [sty.textInput__type_dateRange]: hasVariant(
+                variants,
+                "type",
+                "dateRange"
               ),
 
               [sty.textInput__type_date]: hasVariant(variants, "type", "date"),
@@ -204,6 +226,12 @@ function PlasmicInputComponent__RenderFunc(props) {
             data-plasmic-name={"dateInputWrapper"}
             data-plasmic-override={overrides.dateInputWrapper}
             className={classNames(defaultcss.all, sty.dateInputWrapper, {
+              [sty.dateInputWrapper__type_dateRange]: hasVariant(
+                variants,
+                "type",
+                "dateRange"
+              ),
+
               [sty.dateInputWrapper__type_date]: hasVariant(
                 variants,
                 "type",
@@ -225,6 +253,19 @@ function PlasmicInputComponent__RenderFunc(props) {
             })}
           />
         ) : null}
+        {(hasVariant(variants, "type", "dateRange") ? true : false) ? (
+          <div
+            data-plasmic-name={"dateRangeInputWrapper"}
+            data-plasmic-override={overrides.dateRangeInputWrapper}
+            className={classNames(defaultcss.all, sty.dateRangeInputWrapper, {
+              [sty.dateRangeInputWrapper__type_dateRange]: hasVariant(
+                variants,
+                "type",
+                "dateRange"
+              )
+            })}
+          />
+        ) : null}
       </div>
     </p.Stack>
   );
@@ -240,7 +281,8 @@ const PlasmicDescendants = {
     "selectInput",
     "checkboxGroup",
     "dateInputWrapper",
-    "timeInputWrapper"
+    "timeInputWrapper",
+    "dateRangeInputWrapper"
   ],
 
   labelContainer: ["labelContainer"],
@@ -251,7 +293,8 @@ const PlasmicDescendants = {
     "selectInput",
     "checkboxGroup",
     "dateInputWrapper",
-    "timeInputWrapper"
+    "timeInputWrapper",
+    "dateRangeInputWrapper"
   ],
 
   textInput: ["textInput"],
@@ -259,7 +302,8 @@ const PlasmicDescendants = {
   selectInput: ["selectInput"],
   checkboxGroup: ["checkboxGroup"],
   dateInputWrapper: ["dateInputWrapper"],
-  timeInputWrapper: ["timeInputWrapper"]
+  timeInputWrapper: ["timeInputWrapper"],
+  dateRangeInputWrapper: ["dateRangeInputWrapper"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -301,6 +345,7 @@ export const PlasmicInputComponent = Object.assign(
     checkboxGroup: makeNodeComponent("checkboxGroup"),
     dateInputWrapper: makeNodeComponent("dateInputWrapper"),
     timeInputWrapper: makeNodeComponent("timeInputWrapper"),
+    dateRangeInputWrapper: makeNodeComponent("dateRangeInputWrapper"),
     // Metadata about props expected for PlasmicInputComponent
     internalVariantProps: PlasmicInputComponent__VariantProps,
     internalArgProps: PlasmicInputComponent__ArgProps

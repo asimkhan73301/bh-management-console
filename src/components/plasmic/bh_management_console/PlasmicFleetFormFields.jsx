@@ -57,7 +57,7 @@ function PlasmicFleetFormFields__RenderFunc(props) {
         data-plasmic-override={overrides.dateInput}
         className={classNames("__wab_instance", sty.dateInput)}
         label={"Date"}
-        type={"date"}
+        type={"dateRange"}
       />
 
       <InputComponent

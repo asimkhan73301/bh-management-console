@@ -21,8 +21,10 @@ import {
 import Button from "../../Button"; // plasmic-import: btDhG8rl2o/component
 import Card from "../../Card"; // plasmic-import: cbRusPsa56/component
 import Dialog from "../../Dialog"; // plasmic-import: E5fsqxpowC/component
-import UserProfile from "../../UserProfile"; // plasmic-import: JaNyePDMS2/component
 import Badge from "../../Badge"; // plasmic-import: rcqj19I7Oe/component
+import UserProfile from "../../UserProfile"; // plasmic-import: JaNyePDMS2/component
+import TimeInfo from "../../TimeInfo"; // plasmic-import: 1Q1glXnQfVK/component
+import ListRow from "../../ListRow"; // plasmic-import: htyyUHdrX7/component
 import { useScreenVariants } from "../blank_project/PlasmicGlobalVariant__Screen"; // plasmic-import: AUzgs24G0s/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
@@ -32,14 +34,15 @@ import CustomerSupportsvgIcon from "./icons/PlasmicIcon__CustomerSupportsvg"; //
 import TrafficJamsvgIcon from "./icons/PlasmicIcon__TrafficJamsvg"; // plasmic-import: 8FGzZD12o/icon
 import GroupMeetingsvgIcon from "./icons/PlasmicIcon__GroupMeetingsvg"; // plasmic-import: UesfMCqru/icon
 import Icons8EditsvgIcon from "./icons/PlasmicIcon__Icons8Editsvg"; // plasmic-import: q0bvoFdaIB/icon
-import ClocksvgIcon from "./icons/PlasmicIcon__Clocksvg"; // plasmic-import: Nzid9dAsSe/icon
 import _51F6Fb256629Fc755B8870C801092942PngOBmXbAsf4 from "./images/_51F6Fb256629Fc755B8870C801092942Png.png"; // plasmic-import: oBMXbASF4/picture
 import honda1PngBI0Bqcls3 from "./images/honda1Png.png"; // plasmic-import: bI0Bqcls3/picture
 
 export const PlasmicListItem__VariantProps = new Array(
   "itemType",
   "editable",
-  "adminContext"
+  "adminContext",
+  "view",
+  "status"
 );
 
 export const PlasmicListItem__ArgProps = new Array("componentToRender");
@@ -68,13 +71,28 @@ function PlasmicListItem__RenderFunc(props) {
           "adminContext"
         ),
 
-        [sty.root__editable]: hasVariant(variants, "editable", "editable")
+        [sty.root__adminContext_status_approved]:
+          hasVariant(variants, "adminContext", "adminContext") &&
+          hasVariant(variants, "status", "approved"),
+        [sty.root__editable]: hasVariant(variants, "editable", "editable"),
+        [sty.root__status_rejected_adminContext]:
+          hasVariant(variants, "status", "rejected") &&
+          hasVariant(variants, "adminContext", "adminContext"),
+        [sty.root__view_row]: hasVariant(variants, "view", "row")
       })}
       data-plasmic-trigger-props={[triggerRootHoverProps]}
     >
       {(
+        hasVariant(variants, "status", "rejected") &&
         hasVariant(variants, "adminContext", "adminContext") &&
         triggers.hover_root
+          ? true
+          : hasVariant(variants, "adminContext", "adminContext") &&
+            hasVariant(variants, "status", "approved") &&
+            triggers.hover_root
+          ? true
+          : hasVariant(variants, "adminContext", "adminContext") &&
+            triggers.hover_root
           ? true
           : false
       ) ? (
@@ -86,7 +104,14 @@ function PlasmicListItem__RenderFunc(props) {
               variants,
               "adminContext",
               "adminContext"
-            )
+            ),
+
+            [sty.freeBox__adminContext_status_approved__sJq71S4It5Nj31U]:
+              hasVariant(variants, "adminContext", "adminContext") &&
+              hasVariant(variants, "status", "approved"),
+            [sty.freeBox__status_rejected_adminContext__sJq71MTtQS4It5]:
+              hasVariant(variants, "status", "rejected") &&
+              hasVariant(variants, "adminContext", "adminContext")
           })}
         >
           {(
@@ -175,655 +200,93 @@ function PlasmicListItem__RenderFunc(props) {
           ) : null}
         </p.Stack>
       ) : null}
+      {(hasVariant(variants, "view", "row") ? true : true) ? (
+        <Card
+          data-plasmic-name={"card"}
+          data-plasmic-override={overrides.card}
+          className={classNames("__wab_instance", sty.card, {
+            [sty.card__adminContext]: hasVariant(
+              variants,
+              "adminContext",
+              "adminContext"
+            ),
 
-      <Card
-        data-plasmic-name={"card"}
-        data-plasmic-override={overrides.card}
-        className={classNames("__wab_instance", sty.card, {
-          [sty.card__adminContext]: hasVariant(
-            variants,
-            "adminContext",
-            "adminContext"
-          ),
-
-          [sty.card__editable]: hasVariant(variants, "editable", "editable")
-        })}
-        contentOnly={"contentOnly"}
-        rounded={"rounded"}
-      >
-        <div className={classNames(defaultcss.all, sty.freeBox__nFH8)}>
-          <p.Stack
-            as={"div"}
-            data-plasmic-name={"wrapper"}
-            data-plasmic-override={overrides.wrapper}
-            hasGap={true}
-            className={classNames(defaultcss.all, sty.wrapper, {
-              [sty.wrapper__itemType_fleet]: hasVariant(
-                variants,
-                "itemType",
-                "fleet"
-              )
-            })}
-          >
-            <div
-              data-plasmic-name={"header"}
-              data-plasmic-override={overrides.header}
-              className={classNames(defaultcss.all, sty.header, {
-                [sty.header__adminContext]: hasVariant(
-                  variants,
-                  "adminContext",
-                  "adminContext"
-                ),
-
-                [sty.header__editable]: hasVariant(
-                  variants,
-                  "editable",
-                  "editable"
-                )
-              })}
-            >
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(defaultcss.all, sty.freeBox__fdKnu, {
-                  [sty.freeBox__adminContext__fdKnus4It5]: hasVariant(
-                    variants,
-                    "adminContext",
-                    "adminContext"
-                  )
-                })}
-              >
-                <p.PlasmicIcon
-                  PlasmicIconType={
-                    hasVariant(variants, "itemType", "meetingRoom")
-                      ? GroupMeetingsvgIcon
-                      : hasVariant(variants, "itemType", "fleet")
-                      ? TrafficJamsvgIcon
-                      : CustomerSupportsvgIcon
-                  }
-                  className={classNames(defaultcss.all, sty.svg__rd5Cv, {
-                    [sty.svg__itemType_fleet__rd5CvUQr6]: hasVariant(
-                      variants,
-                      "itemType",
-                      "fleet"
-                    ),
-
-                    [sty.svg__itemType_meetingRoom__rd5CvW4NkQ]: hasVariant(
-                      variants,
-                      "itemType",
-                      "meetingRoom"
-                    )
-                  })}
-                  role={"img"}
-                />
-
-                <div
-                  className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.text__zmf4Y,
-                    {
-                      [sty.text__itemType_fleet__zmf4YUQr6]: hasVariant(
-                        variants,
-                        "itemType",
-                        "fleet"
-                      ),
-
-                      [sty.text__itemType_meetingRoom__zmf4YW4NkQ]: hasVariant(
-                        variants,
-                        "itemType",
-                        "meetingRoom"
-                      )
-                    }
-                  )}
-                >
-                  {hasVariant(variants, "itemType", "meetingRoom")
-                    ? "Meeting Room"
-                    : hasVariant(variants, "itemType", "fleet")
-                    ? "Fleet"
-                    : "Service"}
-                </div>
-              </p.Stack>
-
-              {(
-                hasVariant(variants, "editable", "editable") &&
-                triggers.hover_root
-                  ? true
-                  : hasVariant(variants, "editable", "editable")
-                  ? true
-                  : true
-              ) ? (
-                <div
-                  data-plasmic-name={"actions"}
-                  data-plasmic-override={overrides.actions}
-                  className={classNames(defaultcss.all, sty.actions, {
-                    [sty.actions__editable]: hasVariant(
-                      variants,
-                      "editable",
-                      "editable"
-                    )
-                  })}
-                >
-                  {(
-                    hasVariant(variants, "editable", "editable") ? true : false
-                  ) ? (
-                    <Dialog
-                      data-plasmic-name={"dialog"}
-                      data-plasmic-override={overrides.dialog}
-                      buttonText={
-                        <Icons8EditsvgIcon
-                          className={classNames(
-                            defaultcss.all,
-                            sty.svg__wCw5P,
-                            {
-                              [sty.svg__editable__wCw5PjWbr]: hasVariant(
-                                variants,
-                                "editable",
-                                "editable"
-                              )
-                            }
-                          )}
-                          role={"img"}
-                        />
-                      }
-                      className={classNames("__wab_instance", sty.dialog, {
-                        [sty.dialog__editable]: hasVariant(
-                          variants,
-                          "editable",
-                          "editable"
-                        )
-                      })}
-                      componentToRender={args.componentToRender}
-                    />
-                  ) : null}
-                </div>
-              ) : null}
-            </div>
-
-            {(
-              hasVariant(variants, "adminContext", "adminContext") ? true : true
-            ) ? (
-              <div
-                className={classNames(defaultcss.all, sty.freeBox__sfcGl, {
-                  [sty.freeBox__adminContext__sfcGlS4It5]: hasVariant(
-                    variants,
-                    "adminContext",
-                    "adminContext"
-                  )
-                })}
-              >
-                <UserProfile
-                  className={classNames(
-                    "__wab_instance",
-                    sty.userProfile__wu3Xi
-                  )}
-                />
-              </div>
-            ) : null}
-
-            <div
-              className={classNames(defaultcss.all, sty.freeBox__iFvxl, {
-                [sty.freeBox__itemType_meetingRoom__iFvxlw4NkQ]: hasVariant(
+            [sty.card__editable]: hasVariant(variants, "editable", "editable"),
+            [sty.card__view_row]: hasVariant(variants, "view", "row")
+          })}
+          contentOnly={"contentOnly"}
+          rounded={"rounded"}
+        >
+          <div className={classNames(defaultcss.all, sty.freeBox__nFH8)}>
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"wrapper"}
+              data-plasmic-override={overrides.wrapper}
+              hasGap={true}
+              className={classNames(defaultcss.all, sty.wrapper, {
+                [sty.wrapper__itemType_fleet]: hasVariant(
                   variants,
                   "itemType",
-                  "meetingRoom"
+                  "fleet"
                 )
               })}
             >
-              {(
-                hasVariant(variants, "itemType", "meetingRoom") ? true : false
-              ) ? (
-                <div
-                  data-plasmic-name={"roomText"}
-                  data-plasmic-override={overrides.roomText}
-                  className={classNames(defaultcss.all, sty.roomText, {
-                    [sty.roomText__itemType_meetingRoom]: hasVariant(
+              <div
+                data-plasmic-name={"header"}
+                data-plasmic-override={overrides.header}
+                className={classNames(defaultcss.all, sty.header, {
+                  [sty.header__adminContext]: hasVariant(
+                    variants,
+                    "adminContext",
+                    "adminContext"
+                  ),
+
+                  [sty.header__editable]: hasVariant(
+                    variants,
+                    "editable",
+                    "editable"
+                  ),
+
+                  [sty.header__status_approved]: hasVariant(
+                    variants,
+                    "status",
+                    "approved"
+                  ),
+
+                  [sty.header__status_rejected]: hasVariant(
+                    variants,
+                    "status",
+                    "rejected"
+                  )
+                })}
+              >
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(defaultcss.all, sty.freeBox__fdKnu, {
+                    [sty.freeBox__adminContext__fdKnus4It5]: hasVariant(
                       variants,
-                      "itemType",
-                      "meetingRoom"
+                      "adminContext",
+                      "adminContext"
                     )
                   })}
                 >
-                  {(
-                    hasVariant(variants, "itemType", "meetingRoom")
-                      ? true
-                      : false
-                  ) ? (
-                    <div
-                      className={classNames(
-                        defaultcss.all,
-                        defaultcss.__wab_text,
-                        sty.text__f10BV,
-                        {
-                          [sty.text__itemType_meetingRoom__f10BVw4NkQ]:
-                            hasVariant(variants, "itemType", "meetingRoom")
-                        }
-                      )}
-                    >
-                      {hasVariant(variants, "itemType", "meetingRoom")
-                        ? "Meeting Room 2"
-                        : "Enter some text"}
-                    </div>
-                  ) : null}
-                </div>
-              ) : null}
-
-              <div
-                data-plasmic-name={"content"}
-                data-plasmic-override={overrides.content}
-                className={classNames(defaultcss.all, sty.content, {
-                  [sty.content__itemType_fleet]: hasVariant(
-                    variants,
-                    "itemType",
-                    "fleet"
-                  ),
-
-                  [sty.content__itemType_meetingRoom]: hasVariant(
-                    variants,
-                    "itemType",
-                    "meetingRoom"
-                  )
-                })}
-              >
-                {(hasVariant(variants, "itemType", "fleet") ? true : true) ? (
-                  <div
-                    className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.text__fSUi9,
-                      {
-                        [sty.text__adminContext__fSUi9S4It5]: hasVariant(
-                          variants,
-                          "adminContext",
-                          "adminContext"
-                        ),
-
-                        [sty.text__itemType_fleet__fSUi9UQr6]: hasVariant(
-                          variants,
-                          "itemType",
-                          "fleet"
-                        ),
-
-                        [sty.text__itemType_meetingRoom__fSUi9W4NkQ]:
-                          hasVariant(variants, "itemType", "meetingRoom")
-                      }
-                    )}
-                  >
-                    {hasVariant(variants, "itemType", "meetingRoom")
-                      ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi urna dolor, porta vitae fermentum malesuada, suscipit nec massa. \n"
-                      : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi urna dolor, porta vitae fermentum malesuada, suscipit nec massa. Pellentesque consequat quam quis mattis aliquet. Nulla id aliquet ante, a gravida nisl. Nulla facilisi. Donec pharetra vitae ligula ut interdum. Etiam porttitor nulla risus, id dignissim ex venenatis eu. Aliquam odio libero, consectetur id leo at, scelerisque ultrices libero. Cras a risus iaculis, dignissim lacus eu, consectetur arcu. Pellentesque tristique faucibus tristique. Mauris lacinia pretium dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer sit amet euismod quam.\n"}
-                  </div>
-                ) : null}
-                {(hasVariant(variants, "itemType", "fleet") ? true : false) ? (
-                  <div
-                    data-plasmic-name={"columns"}
-                    data-plasmic-override={overrides.columns}
-                    className={classNames(defaultcss.all, sty.columns, {
-                      [sty.columns__itemType_fleet]: hasVariant(
-                        variants,
-                        "itemType",
-                        "fleet"
-                      )
-                    })}
-                  >
-                    {(
-                      hasVariant(variants, "itemType", "fleet") ? true : false
-                    ) ? (
-                      <div
-                        className={classNames(
-                          defaultcss.all,
-                          sty.column__g8Iu,
-                          {
-                            [sty.column__itemType_fleet__g8IuUQr6]: hasVariant(
-                              variants,
-                              "itemType",
-                              "fleet"
-                            )
-                          }
-                        )}
-                      >
-                        {(
-                          hasVariant(variants, "itemType", "fleet")
-                            ? true
-                            : false
-                        ) ? (
-                          <p.Stack
-                            as={"div"}
-                            hasGap={true}
-                            className={classNames(
-                              defaultcss.all,
-                              sty.freeBox__e9YR,
-                              {
-                                [sty.freeBox__itemType_fleet__e9YRUQr6]:
-                                  hasVariant(variants, "itemType", "fleet")
-                              }
-                            )}
-                          >
-                            {(
-                              hasVariant(variants, "itemType", "fleet")
-                                ? true
-                                : false
-                            ) ? (
-                              <div
-                                className={classNames(
-                                  defaultcss.all,
-                                  defaultcss.__wab_text,
-                                  sty.text__qaS8T,
-                                  {
-                                    [sty.text__itemType_fleet__qaS8TUQr6]:
-                                      hasVariant(variants, "itemType", "fleet")
-                                  }
-                                )}
-                              >
-                                {hasVariant(variants, "itemType", "fleet")
-                                  ? "Driver"
-                                  : "Enter some text"}
-                              </div>
-                            ) : null}
-                            {(
-                              hasVariant(variants, "itemType", "fleet")
-                                ? true
-                                : false
-                            ) ? (
-                              <UserProfile
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.userProfile__efyu,
-                                  {
-                                    [sty.userProfile__itemType_fleet__efyuUQr6]:
-                                      hasVariant(variants, "itemType", "fleet")
-                                  }
-                                )}
-                                userImage={
-                                  <img
-                                    alt={""}
-                                    className={classNames(
-                                      defaultcss.img,
-                                      sty.img__z0I9Z,
-                                      {
-                                        [sty.img__itemType_fleet__z0I9ZUQr6]:
-                                          hasVariant(
-                                            variants,
-                                            "itemType",
-                                            "fleet"
-                                          )
-                                      }
-                                    )}
-                                    src={
-                                      _51F6Fb256629Fc755B8870C801092942PngOBmXbAsf4
-                                    }
-                                  />
-                                }
-                                username={
-                                  <div
-                                    className={classNames(
-                                      defaultcss.all,
-                                      defaultcss.__wab_text,
-                                      sty.text___5EadP,
-                                      {
-                                        [sty.text__itemType_fleet___5EadPUQr6]:
-                                          hasVariant(
-                                            variants,
-                                            "itemType",
-                                            "fleet"
-                                          )
-                                      }
-                                    )}
-                                  >
-                                    {hasVariant(variants, "itemType", "fleet")
-                                      ? "Ali Hussain"
-                                      : "John Doe"}
-                                  </div>
-                                }
-                              />
-                            ) : null}
-                          </p.Stack>
-                        ) : null}
-                      </div>
-                    ) : null}
-                    {(
-                      hasVariant(variants, "itemType", "fleet") ? true : false
-                    ) ? (
-                      <div
-                        className={classNames(
-                          defaultcss.all,
-                          sty.column__sWmGh,
-                          {
-                            [sty.column__itemType_fleet__sWmGhUQr6]: hasVariant(
-                              variants,
-                              "itemType",
-                              "fleet"
-                            )
-                          }
-                        )}
-                      >
-                        {(
-                          hasVariant(variants, "itemType", "fleet")
-                            ? true
-                            : false
-                        ) ? (
-                          <p.Stack
-                            as={"div"}
-                            hasGap={true}
-                            className={classNames(
-                              defaultcss.all,
-                              sty.freeBox__lkeKl,
-                              {
-                                [sty.freeBox__itemType_fleet__lkeKlUQr6]:
-                                  hasVariant(variants, "itemType", "fleet")
-                              }
-                            )}
-                          >
-                            {(
-                              hasVariant(variants, "itemType", "fleet")
-                                ? true
-                                : false
-                            ) ? (
-                              <div
-                                className={classNames(
-                                  defaultcss.all,
-                                  defaultcss.__wab_text,
-                                  sty.text__tbRo9,
-                                  {
-                                    [sty.text__itemType_fleet__tbRo9UQr6]:
-                                      hasVariant(variants, "itemType", "fleet")
-                                  }
-                                )}
-                              >
-                                {hasVariant(variants, "itemType", "fleet")
-                                  ? "Vehical"
-                                  : "Enter some text"}
-                              </div>
-                            ) : null}
-                            {(
-                              hasVariant(variants, "itemType", "fleet")
-                                ? true
-                                : false
-                            ) ? (
-                              <UserProfile
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.userProfile___2UUtD,
-                                  {
-                                    [sty.userProfile__itemType_fleet___2UUtDUQr6]:
-                                      hasVariant(variants, "itemType", "fleet")
-                                  }
-                                )}
-                                userImage={
-                                  <img
-                                    alt={""}
-                                    className={classNames(
-                                      defaultcss.img,
-                                      sty.img__pzm2B,
-                                      {
-                                        [sty.img__itemType_fleet__pzm2BUQr6]:
-                                          hasVariant(
-                                            variants,
-                                            "itemType",
-                                            "fleet"
-                                          )
-                                      }
-                                    )}
-                                    src={
-                                      hasVariant(variants, "itemType", "fleet")
-                                        ? honda1PngBI0Bqcls3
-                                        : _51F6Fb256629Fc755B8870C801092942PngOBmXbAsf4
-                                    }
-                                  />
-                                }
-                                username={
-                                  <div
-                                    className={classNames(
-                                      defaultcss.all,
-                                      defaultcss.__wab_text,
-                                      sty.text__olRdN,
-                                      {
-                                        [sty.text__itemType_fleet__olRdNUQr6]:
-                                          hasVariant(
-                                            variants,
-                                            "itemType",
-                                            "fleet"
-                                          )
-                                      }
-                                    )}
-                                  >
-                                    {hasVariant(variants, "itemType", "fleet")
-                                      ? "Honda City"
-                                      : "John Doe"}
-                                  </div>
-                                }
-                              />
-                            ) : null}
-                          </p.Stack>
-                        ) : null}
-                      </div>
-                    ) : null}
-                  </div>
-                ) : null}
-              </div>
-            </div>
-          </p.Stack>
-
-          <p.Stack
-            as={"div"}
-            data-plasmic-name={"extraInfo"}
-            data-plasmic-override={overrides.extraInfo}
-            hasGap={true}
-            className={classNames(defaultcss.all, sty.extraInfo, {
-              [sty.extraInfo__itemType_fleet]: hasVariant(
-                variants,
-                "itemType",
-                "fleet"
-              ),
-
-              [sty.extraInfo__itemType_meetingRoom]: hasVariant(
-                variants,
-                "itemType",
-                "meetingRoom"
-              )
-            })}
-          >
-            {(hasVariant(variants, "itemType", "fleet") ? true : true) ? (
-              <Badge
-                className={classNames("__wab_instance", sty.badge__sAxf4, {
-                  [sty.badge__itemType_fleet__sAxf4UQr6]: hasVariant(
-                    variants,
-                    "itemType",
-                    "fleet"
-                  )
-                })}
-                label={
-                  hasVariant(variants, "itemType", "meetingRoom")
-                    ? "Refreshment"
-                    : "Service Kind 1"
-                }
-                size={"small"}
-              />
-            ) : null}
-            {(
-              hasVariant(variants, "itemType", "meetingRoom")
-                ? true
-                : hasVariant(variants, "itemType", "fleet")
-                ? true
-                : true
-            ) ? (
-              <Badge
-                className={classNames("__wab_instance", sty.badge__cu2WD, {
-                  [sty.badge__itemType_fleet__cu2WDUQr6]: hasVariant(
-                    variants,
-                    "itemType",
-                    "fleet"
-                  ),
-
-                  [sty.badge__itemType_meetingRoom__cu2WDw4NkQ]: hasVariant(
-                    variants,
-                    "itemType",
-                    "meetingRoom"
-                  )
-                })}
-                label={
-                  <div
-                    className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.text__jwJuR
-                    )}
-                  >
-                    {"Plumbing"}
-                  </div>
-                }
-                size={"small"}
-              />
-            ) : null}
-            {(
-              hasVariant(variants, "itemType", "meetingRoom")
-                ? true
-                : hasVariant(variants, "itemType", "fleet")
-                ? true
-                : false
-            ) ? (
-              <p.Stack
-                as={"div"}
-                data-plasmic-name={"timeInfo"}
-                data-plasmic-override={overrides.timeInfo}
-                hasGap={true}
-                className={classNames(defaultcss.all, sty.timeInfo, {
-                  [sty.timeInfo__itemType_fleet]: hasVariant(
-                    variants,
-                    "itemType",
-                    "fleet"
-                  ),
-
-                  [sty.timeInfo__itemType_meetingRoom]: hasVariant(
-                    variants,
-                    "itemType",
-                    "meetingRoom"
-                  )
-                })}
-              >
-                {(
-                  hasVariant(variants, "itemType", "meetingRoom")
-                    ? true
-                    : hasVariant(variants, "itemType", "fleet")
-                    ? true
-                    : false
-                ) ? (
                   <p.PlasmicIcon
                     PlasmicIconType={
                       hasVariant(variants, "itemType", "meetingRoom")
-                        ? ClocksvgIcon
+                        ? GroupMeetingsvgIcon
                         : hasVariant(variants, "itemType", "fleet")
-                        ? ClocksvgIcon
-                        : "div"
+                        ? TrafficJamsvgIcon
+                        : CustomerSupportsvgIcon
                     }
-                    className={classNames(defaultcss.all, sty.svg___6QboC, {
-                      [sty.svg__itemType_fleet___6QboCUQr6]: hasVariant(
+                    className={classNames(defaultcss.all, sty.svg__rd5Cv, {
+                      [sty.svg__itemType_fleet__rd5CvUQr6]: hasVariant(
                         variants,
                         "itemType",
                         "fleet"
                       ),
 
-                      [sty.svg__itemType_meetingRoom___6QboCw4NkQ]: hasVariant(
+                      [sty.svg__itemType_meetingRoom__rd5CvW4NkQ]: hasVariant(
                         variants,
                         "itemType",
                         "meetingRoom"
@@ -831,43 +294,711 @@ function PlasmicListItem__RenderFunc(props) {
                     })}
                     role={"img"}
                   />
-                ) : null}
-                {(
-                  hasVariant(variants, "itemType", "meetingRoom")
-                    ? true
-                    : hasVariant(variants, "itemType", "fleet")
-                    ? true
-                    : false
-                ) ? (
+
                   <div
                     className={classNames(
                       defaultcss.all,
                       defaultcss.__wab_text,
-                      sty.text__hv5ZV,
+                      sty.text__zmf4Y,
                       {
-                        [sty.text__itemType_fleet__hv5ZVUQr6]: hasVariant(
+                        [sty.text__itemType_fleet__zmf4YUQr6]: hasVariant(
                           variants,
                           "itemType",
                           "fleet"
                         ),
 
-                        [sty.text__itemType_meetingRoom__hv5ZVw4NkQ]:
+                        [sty.text__itemType_meetingRoom__zmf4YW4NkQ]:
                           hasVariant(variants, "itemType", "meetingRoom")
                       }
                     )}
                   >
                     {hasVariant(variants, "itemType", "meetingRoom")
-                      ? "4/29/2021 4:00 PM"
+                      ? "Meeting Room"
                       : hasVariant(variants, "itemType", "fleet")
-                      ? "09/14/2021 7:30 PM"
-                      : "Enter some text"}
+                      ? "Fleet"
+                      : "Service"}
+                  </div>
+                </p.Stack>
+
+                {(
+                  hasVariant(variants, "editable", "editable") &&
+                  triggers.hover_root
+                    ? true
+                    : hasVariant(variants, "status", "rejected")
+                    ? true
+                    : hasVariant(variants, "status", "approved")
+                    ? true
+                    : hasVariant(variants, "editable", "editable")
+                    ? true
+                    : true
+                ) ? (
+                  <div
+                    data-plasmic-name={"actions"}
+                    data-plasmic-override={overrides.actions}
+                    className={classNames(defaultcss.all, sty.actions, {
+                      [sty.actions__editable]: hasVariant(
+                        variants,
+                        "editable",
+                        "editable"
+                      ),
+
+                      [sty.actions__status_approved]: hasVariant(
+                        variants,
+                        "status",
+                        "approved"
+                      ),
+
+                      [sty.actions__status_rejected]: hasVariant(
+                        variants,
+                        "status",
+                        "rejected"
+                      )
+                    })}
+                  >
+                    {(
+                      hasVariant(variants, "editable", "editable")
+                        ? true
+                        : false
+                    ) ? (
+                      <Dialog
+                        data-plasmic-name={"dialog"}
+                        data-plasmic-override={overrides.dialog}
+                        buttonText={
+                          <Icons8EditsvgIcon
+                            className={classNames(
+                              defaultcss.all,
+                              sty.svg__wCw5P,
+                              {
+                                [sty.svg__editable__wCw5PjWbr]: hasVariant(
+                                  variants,
+                                  "editable",
+                                  "editable"
+                                )
+                              }
+                            )}
+                            role={"img"}
+                          />
+                        }
+                        className={classNames("__wab_instance", sty.dialog, {
+                          [sty.dialog__editable]: hasVariant(
+                            variants,
+                            "editable",
+                            "editable"
+                          )
+                        })}
+                        componentToRender={args.componentToRender}
+                      />
+                    ) : null}
+                    {(
+                      hasVariant(variants, "status", "rejected")
+                        ? true
+                        : hasVariant(variants, "status", "approved")
+                        ? true
+                        : false
+                    ) ? (
+                      <Badge
+                        className={classNames(
+                          "__wab_instance",
+                          sty.badge__cGeLu,
+                          {
+                            [sty.badge__status_approved__cGeLUnj31U]:
+                              hasVariant(variants, "status", "approved"),
+                            [sty.badge__status_rejected__cGeLuMTtQ]: hasVariant(
+                              variants,
+                              "status",
+                              "rejected"
+                            )
+                          }
+                        )}
+                        color={
+                          hasVariant(variants, "status", "rejected")
+                            ? "red"
+                            : hasVariant(variants, "status", "approved")
+                            ? "green"
+                            : undefined
+                        }
+                        label={
+                          <div
+                            className={classNames(
+                              defaultcss.all,
+                              defaultcss.__wab_text,
+                              sty.text___2Bdkf,
+                              {
+                                [sty.text__status_approved___2BdkFnj31U]:
+                                  hasVariant(variants, "status", "approved"),
+                                [sty.text__status_rejected___2BdkfMTtQ]:
+                                  hasVariant(variants, "status", "rejected")
+                              }
+                            )}
+                          >
+                            {hasVariant(variants, "status", "rejected")
+                              ? "Rejected"
+                              : hasVariant(variants, "status", "approved")
+                              ? "Approved"
+                              : "Service Kind 1"}
+                          </div>
+                        }
+                        size={
+                          hasVariant(variants, "status", "rejected")
+                            ? "small"
+                            : hasVariant(variants, "status", "approved")
+                            ? "small"
+                            : undefined
+                        }
+                      />
+                    ) : null}
                   </div>
                 ) : null}
-              </p.Stack>
-            ) : null}
-          </p.Stack>
-        </div>
-      </Card>
+              </div>
+
+              {(
+                hasVariant(variants, "adminContext", "adminContext")
+                  ? true
+                  : true
+              ) ? (
+                <div
+                  className={classNames(defaultcss.all, sty.freeBox__sfcGl, {
+                    [sty.freeBox__adminContext__sfcGlS4It5]: hasVariant(
+                      variants,
+                      "adminContext",
+                      "adminContext"
+                    )
+                  })}
+                >
+                  <UserProfile
+                    className={classNames(
+                      "__wab_instance",
+                      sty.userProfile__wu3Xi
+                    )}
+                  />
+                </div>
+              ) : null}
+
+              <div
+                className={classNames(defaultcss.all, sty.freeBox__iFvxl, {
+                  [sty.freeBox__itemType_meetingRoom__iFvxlw4NkQ]: hasVariant(
+                    variants,
+                    "itemType",
+                    "meetingRoom"
+                  )
+                })}
+              >
+                {(
+                  hasVariant(variants, "itemType", "meetingRoom") ? true : false
+                ) ? (
+                  <div
+                    data-plasmic-name={"roomText"}
+                    data-plasmic-override={overrides.roomText}
+                    className={classNames(defaultcss.all, sty.roomText, {
+                      [sty.roomText__itemType_meetingRoom]: hasVariant(
+                        variants,
+                        "itemType",
+                        "meetingRoom"
+                      )
+                    })}
+                  >
+                    {(
+                      hasVariant(variants, "itemType", "meetingRoom")
+                        ? true
+                        : false
+                    ) ? (
+                      <div
+                        className={classNames(
+                          defaultcss.all,
+                          defaultcss.__wab_text,
+                          sty.text__f10BV,
+                          {
+                            [sty.text__itemType_meetingRoom__f10BVw4NkQ]:
+                              hasVariant(variants, "itemType", "meetingRoom")
+                          }
+                        )}
+                      >
+                        {hasVariant(variants, "itemType", "meetingRoom")
+                          ? "Meeting Room 2"
+                          : "Enter some text"}
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                <div
+                  data-plasmic-name={"content"}
+                  data-plasmic-override={overrides.content}
+                  className={classNames(defaultcss.all, sty.content, {
+                    [sty.content__itemType_fleet]: hasVariant(
+                      variants,
+                      "itemType",
+                      "fleet"
+                    ),
+
+                    [sty.content__itemType_meetingRoom]: hasVariant(
+                      variants,
+                      "itemType",
+                      "meetingRoom"
+                    )
+                  })}
+                >
+                  {(hasVariant(variants, "itemType", "fleet") ? true : true) ? (
+                    <div
+                      className={classNames(
+                        defaultcss.all,
+                        defaultcss.__wab_text,
+                        sty.text__fSUi9,
+                        {
+                          [sty.text__adminContext__fSUi9S4It5]: hasVariant(
+                            variants,
+                            "adminContext",
+                            "adminContext"
+                          ),
+
+                          [sty.text__itemType_fleet__fSUi9UQr6]: hasVariant(
+                            variants,
+                            "itemType",
+                            "fleet"
+                          ),
+
+                          [sty.text__itemType_meetingRoom__fSUi9W4NkQ]:
+                            hasVariant(variants, "itemType", "meetingRoom")
+                        }
+                      )}
+                    >
+                      {hasVariant(variants, "itemType", "meetingRoom")
+                        ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi urna dolor, porta vitae fermentum malesuada, suscipit nec massa. \n"
+                        : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi urna dolor, porta vitae fermentum malesuada, suscipit nec massa. Pellentesque consequat quam quis mattis aliquet. Nulla id aliquet ante, a gravida nisl. Nulla facilisi. Donec pharetra vitae ligula ut interdum. Etiam porttitor nulla risus, id dignissim ex venenatis eu. Aliquam odio libero, consectetur id leo at, scelerisque ultrices libero. Cras a risus iaculis, dignissim lacus eu, consectetur arcu. Pellentesque tristique faucibus tristique. Mauris lacinia pretium dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer sit amet euismod quam.\n"}
+                    </div>
+                  ) : null}
+                  {(
+                    hasVariant(variants, "itemType", "fleet") ? true : false
+                  ) ? (
+                    <div
+                      data-plasmic-name={"columns"}
+                      data-plasmic-override={overrides.columns}
+                      className={classNames(defaultcss.all, sty.columns, {
+                        [sty.columns__itemType_fleet]: hasVariant(
+                          variants,
+                          "itemType",
+                          "fleet"
+                        )
+                      })}
+                    >
+                      {(
+                        hasVariant(variants, "itemType", "fleet") ? true : false
+                      ) ? (
+                        <div
+                          className={classNames(
+                            defaultcss.all,
+                            sty.column__g8Iu,
+                            {
+                              [sty.column__itemType_fleet__g8IuUQr6]:
+                                hasVariant(variants, "itemType", "fleet")
+                            }
+                          )}
+                        >
+                          {(
+                            hasVariant(variants, "itemType", "fleet")
+                              ? true
+                              : false
+                          ) ? (
+                            <p.Stack
+                              as={"div"}
+                              hasGap={true}
+                              className={classNames(
+                                defaultcss.all,
+                                sty.freeBox__e9YR,
+                                {
+                                  [sty.freeBox__itemType_fleet__e9YRUQr6]:
+                                    hasVariant(variants, "itemType", "fleet")
+                                }
+                              )}
+                            >
+                              {(
+                                hasVariant(variants, "itemType", "fleet")
+                                  ? true
+                                  : false
+                              ) ? (
+                                <div
+                                  className={classNames(
+                                    defaultcss.all,
+                                    defaultcss.__wab_text,
+                                    sty.text__qaS8T,
+                                    {
+                                      [sty.text__itemType_fleet__qaS8TUQr6]:
+                                        hasVariant(
+                                          variants,
+                                          "itemType",
+                                          "fleet"
+                                        )
+                                    }
+                                  )}
+                                >
+                                  {hasVariant(variants, "itemType", "fleet")
+                                    ? "Driver"
+                                    : "Enter some text"}
+                                </div>
+                              ) : null}
+                              {(
+                                hasVariant(variants, "itemType", "fleet")
+                                  ? true
+                                  : false
+                              ) ? (
+                                <UserProfile
+                                  className={classNames(
+                                    "__wab_instance",
+                                    sty.userProfile__efyu,
+                                    {
+                                      [sty.userProfile__itemType_fleet__efyuUQr6]:
+                                        hasVariant(
+                                          variants,
+                                          "itemType",
+                                          "fleet"
+                                        )
+                                    }
+                                  )}
+                                  userImage={
+                                    <img
+                                      alt={""}
+                                      className={classNames(
+                                        defaultcss.img,
+                                        sty.img__z0I9Z,
+                                        {
+                                          [sty.img__itemType_fleet__z0I9ZUQr6]:
+                                            hasVariant(
+                                              variants,
+                                              "itemType",
+                                              "fleet"
+                                            )
+                                        }
+                                      )}
+                                      src={
+                                        _51F6Fb256629Fc755B8870C801092942PngOBmXbAsf4
+                                      }
+                                    />
+                                  }
+                                  username={
+                                    <div
+                                      className={classNames(
+                                        defaultcss.all,
+                                        defaultcss.__wab_text,
+                                        sty.text___5EadP,
+                                        {
+                                          [sty.text__itemType_fleet___5EadPUQr6]:
+                                            hasVariant(
+                                              variants,
+                                              "itemType",
+                                              "fleet"
+                                            )
+                                        }
+                                      )}
+                                    >
+                                      {hasVariant(variants, "itemType", "fleet")
+                                        ? "Ali Hussain"
+                                        : "John Doe"}
+                                    </div>
+                                  }
+                                />
+                              ) : null}
+                            </p.Stack>
+                          ) : null}
+                        </div>
+                      ) : null}
+                      {(
+                        hasVariant(variants, "itemType", "fleet") ? true : false
+                      ) ? (
+                        <div
+                          className={classNames(
+                            defaultcss.all,
+                            sty.column__sWmGh,
+                            {
+                              [sty.column__itemType_fleet__sWmGhUQr6]:
+                                hasVariant(variants, "itemType", "fleet")
+                            }
+                          )}
+                        >
+                          {(
+                            hasVariant(variants, "itemType", "fleet")
+                              ? true
+                              : false
+                          ) ? (
+                            <p.Stack
+                              as={"div"}
+                              hasGap={true}
+                              className={classNames(
+                                defaultcss.all,
+                                sty.freeBox__lkeKl,
+                                {
+                                  [sty.freeBox__itemType_fleet__lkeKlUQr6]:
+                                    hasVariant(variants, "itemType", "fleet")
+                                }
+                              )}
+                            >
+                              {(
+                                hasVariant(variants, "itemType", "fleet")
+                                  ? true
+                                  : false
+                              ) ? (
+                                <div
+                                  className={classNames(
+                                    defaultcss.all,
+                                    defaultcss.__wab_text,
+                                    sty.text__tbRo9,
+                                    {
+                                      [sty.text__itemType_fleet__tbRo9UQr6]:
+                                        hasVariant(
+                                          variants,
+                                          "itemType",
+                                          "fleet"
+                                        )
+                                    }
+                                  )}
+                                >
+                                  {hasVariant(variants, "itemType", "fleet")
+                                    ? "Vehical"
+                                    : "Enter some text"}
+                                </div>
+                              ) : null}
+                              {(
+                                hasVariant(variants, "itemType", "fleet")
+                                  ? true
+                                  : false
+                              ) ? (
+                                <UserProfile
+                                  className={classNames(
+                                    "__wab_instance",
+                                    sty.userProfile___2UUtD,
+                                    {
+                                      [sty.userProfile__itemType_fleet___2UUtDUQr6]:
+                                        hasVariant(
+                                          variants,
+                                          "itemType",
+                                          "fleet"
+                                        )
+                                    }
+                                  )}
+                                  userImage={
+                                    <img
+                                      alt={""}
+                                      className={classNames(
+                                        defaultcss.img,
+                                        sty.img__pzm2B,
+                                        {
+                                          [sty.img__itemType_fleet__pzm2BUQr6]:
+                                            hasVariant(
+                                              variants,
+                                              "itemType",
+                                              "fleet"
+                                            )
+                                        }
+                                      )}
+                                      src={
+                                        hasVariant(
+                                          variants,
+                                          "itemType",
+                                          "fleet"
+                                        )
+                                          ? honda1PngBI0Bqcls3
+                                          : _51F6Fb256629Fc755B8870C801092942PngOBmXbAsf4
+                                      }
+                                    />
+                                  }
+                                  username={
+                                    <div
+                                      className={classNames(
+                                        defaultcss.all,
+                                        defaultcss.__wab_text,
+                                        sty.text__olRdN,
+                                        {
+                                          [sty.text__itemType_fleet__olRdNUQr6]:
+                                            hasVariant(
+                                              variants,
+                                              "itemType",
+                                              "fleet"
+                                            )
+                                        }
+                                      )}
+                                    >
+                                      {hasVariant(variants, "itemType", "fleet")
+                                        ? "Honda City"
+                                        : "John Doe"}
+                                    </div>
+                                  }
+                                />
+                              ) : null}
+                            </p.Stack>
+                          ) : null}
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+            </p.Stack>
+
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"extraInfo"}
+              data-plasmic-override={overrides.extraInfo}
+              hasGap={true}
+              className={classNames(defaultcss.all, sty.extraInfo, {
+                [sty.extraInfo__itemType_fleet]: hasVariant(
+                  variants,
+                  "itemType",
+                  "fleet"
+                ),
+
+                [sty.extraInfo__itemType_meetingRoom]: hasVariant(
+                  variants,
+                  "itemType",
+                  "meetingRoom"
+                )
+              })}
+            >
+              {(hasVariant(variants, "itemType", "fleet") ? true : true) ? (
+                <Badge
+                  className={classNames("__wab_instance", sty.badge__sAxf4, {
+                    [sty.badge__itemType_fleet__sAxf4UQr6]: hasVariant(
+                      variants,
+                      "itemType",
+                      "fleet"
+                    )
+                  })}
+                  label={
+                    hasVariant(variants, "itemType", "meetingRoom")
+                      ? "Refreshment"
+                      : "Service Kind 1"
+                  }
+                  size={"small"}
+                />
+              ) : null}
+              {(
+                hasVariant(variants, "itemType", "meetingRoom")
+                  ? true
+                  : hasVariant(variants, "itemType", "fleet")
+                  ? true
+                  : true
+              ) ? (
+                <Badge
+                  className={classNames("__wab_instance", sty.badge__cu2WD, {
+                    [sty.badge__itemType_fleet__cu2WDUQr6]: hasVariant(
+                      variants,
+                      "itemType",
+                      "fleet"
+                    ),
+
+                    [sty.badge__itemType_meetingRoom__cu2WDw4NkQ]: hasVariant(
+                      variants,
+                      "itemType",
+                      "meetingRoom"
+                    )
+                  })}
+                  label={
+                    <div
+                      className={classNames(
+                        defaultcss.all,
+                        defaultcss.__wab_text,
+                        sty.text__jwJuR
+                      )}
+                    >
+                      {"Plumbing"}
+                    </div>
+                  }
+                  size={"small"}
+                />
+              ) : null}
+              {(
+                hasVariant(variants, "itemType", "meetingRoom")
+                  ? true
+                  : hasVariant(variants, "itemType", "fleet")
+                  ? true
+                  : false
+              ) ? (
+                <TimeInfo
+                  data-plasmic-name={"timeInfo"}
+                  data-plasmic-override={overrides.timeInfo}
+                  className={classNames("__wab_instance", sty.timeInfo, {
+                    [sty.timeInfo__itemType_fleet]: hasVariant(
+                      variants,
+                      "itemType",
+                      "fleet"
+                    ),
+
+                    [sty.timeInfo__itemType_meetingRoom]: hasVariant(
+                      variants,
+                      "itemType",
+                      "meetingRoom"
+                    )
+                  })}
+                  itemType={
+                    hasVariant(variants, "itemType", "meetingRoom")
+                      ? "meetingRoom"
+                      : hasVariant(variants, "itemType", "fleet")
+                      ? "fleet"
+                      : undefined
+                  }
+                />
+              ) : null}
+            </p.Stack>
+          </div>
+        </Card>
+      ) : null}
+      {(hasVariant(variants, "view", "row") ? true : false) ? (
+        <ListRow
+          data-plasmic-name={"listRow"}
+          data-plasmic-override={overrides.listRow}
+          className={classNames("__wab_instance", sty.listRow, {
+            [sty.listRow__view_row]: hasVariant(variants, "view", "row"),
+            [sty.listRow__view_row_itemType_fleet]:
+              hasVariant(variants, "view", "row") &&
+              hasVariant(variants, "itemType", "fleet"),
+            [sty.listRow__view_row_itemType_fleet_status_approved]:
+              hasVariant(variants, "view", "row") &&
+              hasVariant(variants, "itemType", "fleet") &&
+              hasVariant(variants, "status", "approved"),
+            [sty.listRow__view_row_itemType_meetingRoom]:
+              hasVariant(variants, "view", "row") &&
+              hasVariant(variants, "itemType", "meetingRoom"),
+            [sty.listRow__view_row_itemType_service_status_approved]:
+              hasVariant(variants, "view", "row") &&
+              hasVariant(variants, "itemType", "service") &&
+              hasVariant(variants, "status", "approved"),
+            [sty.listRow__view_row_status_approved]:
+              hasVariant(variants, "view", "row") &&
+              hasVariant(variants, "status", "approved"),
+            [sty.listRow__view_row_status_rejected]:
+              hasVariant(variants, "view", "row") &&
+              hasVariant(variants, "status", "rejected")
+          })}
+          rowType={
+            hasVariant(variants, "view", "row") &&
+            hasVariant(variants, "itemType", "service") &&
+            hasVariant(variants, "status", "approved")
+              ? "service"
+              : hasVariant(variants, "view", "row") &&
+                hasVariant(variants, "itemType", "fleet")
+              ? "fleet"
+              : hasVariant(variants, "view", "row") &&
+                hasVariant(variants, "itemType", "meetingRoom")
+              ? "meetingRoom"
+              : undefined
+          }
+          status={
+            hasVariant(variants, "view", "row") &&
+            hasVariant(variants, "itemType", "fleet") &&
+            hasVariant(variants, "status", "approved")
+              ? "approved"
+              : hasVariant(variants, "view", "row") &&
+                hasVariant(variants, "itemType", "service") &&
+                hasVariant(variants, "status", "approved")
+              ? "approved"
+              : hasVariant(variants, "view", "row") &&
+                hasVariant(variants, "status", "rejected")
+              ? "rejected"
+              : hasVariant(variants, "view", "row") &&
+                hasVariant(variants, "status", "approved")
+              ? "approved"
+              : undefined
+          }
+        />
+      ) : null}
     </div>
   );
 }
@@ -886,7 +1017,8 @@ const PlasmicDescendants = {
     "content",
     "columns",
     "extraInfo",
-    "timeInfo"
+    "timeInfo",
+    "listRow"
   ],
 
   rejectButton: ["rejectButton"],
@@ -921,7 +1053,8 @@ const PlasmicDescendants = {
   content: ["content", "columns"],
   columns: ["columns"],
   extraInfo: ["extraInfo", "timeInfo"],
-  timeInfo: ["timeInfo"]
+  timeInfo: ["timeInfo"],
+  listRow: ["listRow"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -967,6 +1100,7 @@ export const PlasmicListItem = Object.assign(
     columns: makeNodeComponent("columns"),
     extraInfo: makeNodeComponent("extraInfo"),
     timeInfo: makeNodeComponent("timeInfo"),
+    listRow: makeNodeComponent("listRow"),
     // Metadata about props expected for PlasmicListItem
     internalVariantProps: PlasmicListItem__VariantProps,
     internalArgProps: PlasmicListItem__ArgProps

@@ -9,3 +9,9 @@
 .textInput:global(.__wab_instance) {
   position: relative;
 }
+.svg__q16 {
+  position: relative;
+  object-fit: cover;
+  width: 18px;
+  height: 18px;
+}

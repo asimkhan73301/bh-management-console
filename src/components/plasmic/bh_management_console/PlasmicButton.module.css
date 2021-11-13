@@ -39,15 +39,15 @@
 .root__type_secondary:hover .button__type_secondary {
   background: #ffff79;
 }
-.slotText__type_primary {
+.slotTargetText__type_primary {
   color: #ffffff;
 }
-.slotText__type_secondary {
+.slotTargetText__type_secondary {
   color: #061d7b /* plasmic-token: K1sbhgWfi */;
 }
-.slotText__size_xs {
+.slotTargetText__size_xs {
   font-size: 10px;
 }
-.slotText__size_sm {
+.slotTargetText__size_sm {
   font-size: 12px;
 }

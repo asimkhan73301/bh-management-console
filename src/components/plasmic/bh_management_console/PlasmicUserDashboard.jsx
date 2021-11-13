@@ -29,30 +29,24 @@ function PlasmicUserDashboard__RenderFunc(props) {
   const { variants, args, overrides, forNode, dataFetches } = props;
   return (
     <React.Fragment>
-      <div className={defaultcss.plasmic_page_wrapper}>
-        <div
-          data-plasmic-name={"root"}
-          data-plasmic-override={overrides.root}
-          data-plasmic-root={true}
-          data-plasmic-for-node={forNode}
-          className={classNames(
-            defaultcss.all,
-            projectcss.root_reset,
-            sty.root
-          )}
+      <div
+        data-plasmic-name={"root"}
+        data-plasmic-override={overrides.root}
+        data-plasmic-root={true}
+        data-plasmic-for-node={forNode}
+        className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      >
+        <UserLayout
+          data-plasmic-name={"userLayout"}
+          data-plasmic-override={overrides.userLayout}
+          className={classNames("__wab_instance", sty.userLayout)}
         >
-          <UserLayout
-            data-plasmic-name={"userLayout"}
-            data-plasmic-override={overrides.userLayout}
-            className={classNames("__wab_instance", sty.userLayout)}
-          >
-            <Sidebar
-              data-plasmic-name={"sidebar"}
-              data-plasmic-override={overrides.sidebar}
-              className={classNames("__wab_instance", sty.sidebar)}
-            />
-          </UserLayout>
-        </div>
+          <Sidebar
+            data-plasmic-name={"sidebar"}
+            data-plasmic-override={overrides.sidebar}
+            className={classNames("__wab_instance", sty.sidebar)}
+          />
+        </UserLayout>
       </div>
     </React.Fragment>
   );

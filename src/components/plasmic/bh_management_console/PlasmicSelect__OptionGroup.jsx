@@ -84,7 +84,7 @@ function PlasmicSelect__OptionGroup__RenderFunc(props) {
           {p.renderPlasmicSlot({
             defaultContents: "Group Name",
             value: args.title,
-            className: classNames(sty.slotTitle)
+            className: classNames(sty.slotTargetTitle)
           })}
         </div>
       ) : null}

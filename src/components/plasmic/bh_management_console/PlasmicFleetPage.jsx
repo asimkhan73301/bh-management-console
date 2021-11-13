@@ -69,11 +69,12 @@ function PlasmicFleetPage__RenderFunc(props) {
                   sty.text__dBttD
                 )}
               >
-                {"List"}
+                {"Add Fleet"}
               </div>
             </React.Fragment>
           }
           className={classNames("__wab_instance", sty.userLayout)}
+          hideFilters={"hideFilters"}
           mainWrapper={
             <FleetForm
               data-plasmic-name={"fleetForm"}

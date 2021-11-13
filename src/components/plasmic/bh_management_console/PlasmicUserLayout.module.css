@@ -90,3 +90,26 @@
   position: relative;
   color: #3950ae /* plasmic-token: 9Jx6sgv6X */;
 }
+.filterWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 8px;
+}
+.filterWrapper__hideFilters {
+  display: none;
+}
+.textInput:global(.__wab_instance) {
+  position: relative;
+  width: 300px;
+  flex-shrink: 0;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  width: 18px;
+  height: 18px;
+  color: #061d7b /* plasmic-token: HNlv0A0HQ */;
+}

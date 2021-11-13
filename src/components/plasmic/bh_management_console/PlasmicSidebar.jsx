@@ -24,6 +24,7 @@ import * as sty from "./PlasmicSidebar.module.css"; // plasmic-import: 2ETjiGbh3
 import ApprovalsvgIcon from "./icons/PlasmicIcon__Approvalsvg"; // plasmic-import: muIIwCg07L/icon
 import CustomerSupportsvgIcon from "./icons/PlasmicIcon__CustomerSupportsvg"; // plasmic-import: UAOJiIzwc/icon
 import TrafficJamsvgIcon from "./icons/PlasmicIcon__TrafficJamsvg"; // plasmic-import: 8FGzZD12o/icon
+import BusinessReportsvgIcon from "./icons/PlasmicIcon__BusinessReportsvg"; // plasmic-import: BdIT_EAXnE/icon
 import GroupMeetingsvgIcon from "./icons/PlasmicIcon__GroupMeetingsvg"; // plasmic-import: UesfMCqru/icon
 import Logout1SvgIcon from "./icons/PlasmicIcon__Logout1Svg"; // plasmic-import: AyfUoElJ4s/icon
 import _51F6Fb256629Fc755B8870C801092942PngOBmXbAsf4 from "./images/_51F6Fb256629Fc755B8870C801092942Png.png"; // plasmic-import: oBMXbASF4/picture
@@ -77,22 +78,20 @@ function PlasmicSidebar__RenderFunc(props) {
           src={_51F6Fb256629Fc755B8870C801092942PngOBmXbAsf4}
         />
 
-        <div
-          className={classNames(
-            defaultcss.all,
-            defaultcss.__wab_text,
-            sty.text__oQyL,
-            {
-              [sty.text__admin__oQyLwi46C]: hasVariant(
-                variants,
-                "admin",
-                "admin"
-              )
-            }
-          )}
+        <a
+          data-plasmic-name={"link"}
+          data-plasmic-override={overrides.link}
+          className={classNames(defaultcss.a, defaultcss.__wab_text, sty.link, {
+            [sty.link__admin]: hasVariant(variants, "admin", "admin")
+          })}
+          href={
+            hasVariant(variants, "admin", "admin")
+              ? "/admin/profile"
+              : "/user/profile"
+          }
         >
           {hasVariant(variants, "admin", "admin") ? "Admin User" : "John Doe"}
-        </div>
+        </a>
       </p.Stack>
 
       <div
@@ -188,8 +187,9 @@ function PlasmicSidebar__RenderFunc(props) {
                 "admin"
               )
             })}
-            destination={"/admin/dashboard"}
-            selected={"selected"}
+            destination={
+              hasVariant(variants, "admin", "admin") ? "/admin/dashboard" : ""
+            }
             slot={
               <ApprovalsvgIcon
                 className={classNames(defaultcss.all, sty.svg__oMuEq)}
@@ -214,6 +214,42 @@ function PlasmicSidebar__RenderFunc(props) {
                 {hasVariant(variants, "admin", "admin")
                   ? "Approvals"
                   : "Some link text"}
+              </div>
+            }
+          />
+        ) : null}
+        {(hasVariant(variants, "admin", "admin") ? true : false) ? (
+          <SidebarItem
+            className={classNames("__wab_instance", sty.sidebarItem__kbJOg, {
+              [sty.sidebarItem__admin__kbJOgwi46C]: hasVariant(
+                variants,
+                "admin",
+                "admin"
+              )
+            })}
+            destination={"/admin/reports"}
+            slot={
+              <BusinessReportsvgIcon
+                className={classNames(defaultcss.all, sty.svg__rSwaH)}
+                role={"img"}
+              />
+            }
+            slot2={
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.text__bqEh7,
+                  {
+                    [sty.text__admin__bqEh7Wi46C]: hasVariant(
+                      variants,
+                      "admin",
+                      "admin"
+                    )
+                  }
+                )}
+              >
+                {hasVariant(variants, "admin", "admin") ? "Reports" : "Reports"}
               </div>
             }
           />
@@ -261,10 +297,20 @@ function PlasmicSidebar__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "brand", "profile", "img", "itemWrapper", "logoutMenu"],
+  root: [
+    "root",
+    "brand",
+    "profile",
+    "img",
+    "link",
+    "itemWrapper",
+    "logoutMenu"
+  ],
+
   brand: ["brand"],
-  profile: ["profile", "img"],
+  profile: ["profile", "img", "link"],
   img: ["img"],
+  link: ["link"],
   itemWrapper: ["itemWrapper"],
   logoutMenu: ["logoutMenu"]
 };
@@ -303,6 +349,7 @@ export const PlasmicSidebar = Object.assign(
     brand: makeNodeComponent("brand"),
     profile: makeNodeComponent("profile"),
     img: makeNodeComponent("img"),
+    link: makeNodeComponent("link"),
     itemWrapper: makeNodeComponent("itemWrapper"),
     logoutMenu: makeNodeComponent("logoutMenu"),
     // Metadata about props expected for PlasmicSidebar

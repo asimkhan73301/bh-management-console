@@ -74,6 +74,7 @@ function PlasmicServicePage__RenderFunc(props) {
             </React.Fragment>
           }
           className={classNames("__wab_instance", sty.userLayout)}
+          hideFilters={"hideFilters"}
           mainWrapper={
             <ServiceForm
               data-plasmic-name={"serviceForm"}

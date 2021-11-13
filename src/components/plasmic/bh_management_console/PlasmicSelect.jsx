@@ -30,7 +30,8 @@ import Icon2Icon from "./icons/PlasmicIcon__Icon2"; // plasmic-import: ZJ9zT0Y2A
 export const PlasmicSelect__VariantProps = new Array(
   "showPlaceholder",
   "isOpen",
-  "isDisabled"
+  "isDisabled",
+  "icon"
 );
 
 export const PlasmicSelect__ArgProps = new Array(
@@ -38,7 +39,8 @@ export const PlasmicSelect__ArgProps = new Array(
   "placeholder",
   "children",
   "value",
-  "name"
+  "name",
+  "slot"
 );
 
 const PlasmicSelectContext = React.createContext(undefined);
@@ -86,10 +88,18 @@ function PlasmicSelect__RenderFunc(props) {
             hasVariant(variants, "isDisabled", "isDisabled") ? true : undefined
           }
         >
-          <div
+          <p.Stack
+            as={"div"}
             data-plasmic-name={"contentContainer"}
             data-plasmic-override={overrides.contentContainer}
+            hasGap={true}
             className={classNames(defaultcss.all, sty.contentContainer, {
+              [sty.contentContainer__icon]: hasVariant(
+                variants,
+                "icon",
+                "icon"
+              ),
+
               [sty.contentContainer__isDisabled]: hasVariant(
                 variants,
                 "isDisabled",
@@ -103,6 +113,26 @@ function PlasmicSelect__RenderFunc(props) {
               )
             })}
           >
+            {(hasVariant(variants, "icon", "icon") ? true : false) ? (
+              <div
+                data-plasmic-name={"freeBox"}
+                data-plasmic-override={overrides.freeBox}
+                className={classNames(defaultcss.all, sty.freeBox, {
+                  [sty.freeBox__icon]: hasVariant(variants, "icon", "icon")
+                })}
+              >
+                {p.renderPlasmicSlot({
+                  defaultContents: (
+                    <svg
+                      className={classNames(defaultcss.all, sty.svg__pjl6M)}
+                      role={"img"}
+                    />
+                  ),
+
+                  value: args.slot
+                })}
+              </div>
+            ) : null}
             {(
               hasVariant(variants, "showPlaceholder", "showPlaceholder")
                 ? false
@@ -111,24 +141,21 @@ function PlasmicSelect__RenderFunc(props) {
               ? p.renderPlasmicSlot({
                   defaultContents: "Selected",
                   value: args.selectedContent,
-                  className: classNames(sty.slotSelectedContent, {
-                    [sty.slotSelectedContent__isDisabled]: hasVariant(
+                  className: classNames(sty.slotTargetSelectedContent, {
+                    [sty.slotTargetSelectedContent__isDisabled]: hasVariant(
                       variants,
                       "isDisabled",
                       "isDisabled"
                     ),
 
-                    [sty.slotSelectedContent__isOpen]: hasVariant(
+                    [sty.slotTargetSelectedContent__isOpen]: hasVariant(
                       variants,
                       "isOpen",
                       "isOpen"
                     ),
 
-                    [sty.slotSelectedContent__showPlaceholder]: hasVariant(
-                      variants,
-                      "showPlaceholder",
-                      "showPlaceholder"
-                    )
+                    [sty.slotTargetSelectedContent__showPlaceholder]:
+                      hasVariant(variants, "showPlaceholder", "showPlaceholder")
                   })
                 })
               : null}
@@ -140,8 +167,8 @@ function PlasmicSelect__RenderFunc(props) {
               ? p.renderPlasmicSlot({
                   defaultContents: "Select…",
                   value: args.placeholder,
-                  className: classNames(sty.slotPlaceholder, {
-                    [sty.slotPlaceholder__showPlaceholder]: hasVariant(
+                  className: classNames(sty.slotTargetPlaceholder, {
+                    [sty.slotTargetPlaceholder__showPlaceholder]: hasVariant(
                       variants,
                       "showPlaceholder",
                       "showPlaceholder"
@@ -149,7 +176,7 @@ function PlasmicSelect__RenderFunc(props) {
                   })
                 })
               : null}
-          </div>
+          </p.Stack>
 
           <p.PlasmicIcon
             data-plasmic-name={"dropdownIcon"}
@@ -277,13 +304,15 @@ const PlasmicDescendants = {
     "root",
     "trigger",
     "contentContainer",
+    "freeBox",
     "dropdownIcon",
     "overlay",
     "optionsContainer"
   ],
 
-  trigger: ["trigger", "contentContainer", "dropdownIcon"],
-  contentContainer: ["contentContainer"],
+  trigger: ["trigger", "contentContainer", "freeBox", "dropdownIcon"],
+  contentContainer: ["contentContainer", "freeBox"],
+  freeBox: ["freeBox"],
   dropdownIcon: ["dropdownIcon"],
   overlay: ["overlay", "optionsContainer"],
   optionsContainer: ["optionsContainer"]
@@ -322,6 +351,7 @@ export const PlasmicSelect = Object.assign(
     // Helper components rendering sub-elements
     trigger: makeNodeComponent("trigger"),
     contentContainer: makeNodeComponent("contentContainer"),
+    freeBox: makeNodeComponent("freeBox"),
     dropdownIcon: makeNodeComponent("dropdownIcon"),
     overlay: makeNodeComponent("overlay"),
     optionsContainer: makeNodeComponent("optionsContainer"),

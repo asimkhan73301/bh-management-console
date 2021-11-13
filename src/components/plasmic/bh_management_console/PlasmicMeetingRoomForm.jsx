@@ -46,6 +46,7 @@ function PlasmicMeetingRoomForm__RenderFunc(props) {
             className={classNames("__wab_instance", sty.meetingRoomFormFields)}
           />
         }
+        redirectOnSubmitLink={"/requests"}
         title={"Add Meeting Room"}
       />
     </div>

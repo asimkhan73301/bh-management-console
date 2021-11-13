@@ -10,7 +10,7 @@
 .userLayout:global(.__wab_instance) {
   position: relative;
 }
-.meetingRoomList:global(.__wab_instance) {
+.meetingRoomForm:global(.__wab_instance) {
   position: relative;
 }
 .text__xjg02 {

@@ -9,7 +9,9 @@
 // Plasmic Project: iiynbYDu6GiGaNNDvPQoVR
 // Component: FBgIYvMF44
 import * as React from "react";
+import * as p from "@plasmicapp/react-web";
 import {
+  hasVariant,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts
@@ -21,9 +23,12 @@ import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-i
 import * as projectcss from "../blank_project/plasmic_blank_project.module.css"; // plasmic-import: iiynbYDu6GiGaNNDvPQoVR/projectcss
 import * as sty from "./PlasmicSelectInput.module.css"; // plasmic-import: FBgIYvMF44/css
 
-export const PlasmicSelectInput__VariantProps = new Array();
+export const PlasmicSelectInput__VariantProps = new Array("icon");
 
-export const PlasmicSelectInput__ArgProps = new Array();
+export const PlasmicSelectInput__ArgProps = new Array(
+  "children",
+  "placeholder"
+);
 
 function PlasmicSelectInput__RenderFunc(props) {
   const { variants, args, overrides, forNode, dataFetches } = props;
@@ -38,8 +43,25 @@ function PlasmicSelectInput__RenderFunc(props) {
       <Select
         data-plasmic-name={"select"}
         data-plasmic-override={overrides.select}
-        className={classNames("__wab_instance", sty.select)}
+        className={classNames("__wab_instance", sty.select, {
+          [sty.select__icon]: hasVariant(variants, "icon", "icon")
+        })}
         defaultValue={""}
+        icon={hasVariant(variants, "icon", "icon") ? "icon" : undefined}
+        placeholder={p.renderPlasmicSlot({
+          defaultContents: "Select…",
+          value: args.placeholder
+        })}
+        slot={p.renderPlasmicSlot({
+          defaultContents: (
+            <svg
+              className={classNames(defaultcss.all, sty.svg__uw0Vh)}
+              role={"img"}
+            />
+          ),
+
+          value: args.children
+        })}
       >
         <Select__Option
           className={classNames("__wab_instance", sty.option__dsddX)}

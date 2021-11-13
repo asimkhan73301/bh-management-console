@@ -45,10 +45,10 @@ function PlasmicServiceFormFields__RenderFunc(props) {
       />
 
       <InputComponent
-        data-plasmic-name={"serviceKindInput"}
-        data-plasmic-override={overrides.serviceKindInput}
-        className={classNames("__wab_instance", sty.serviceKindInput)}
-        label={"Service Kind"}
+        data-plasmic-name={"serviceDepartmentInput"}
+        data-plasmic-override={overrides.serviceDepartmentInput}
+        className={classNames("__wab_instance", sty.serviceDepartmentInput)}
+        label={"Service Department"}
         type={"select"}
       />
 
@@ -64,9 +64,15 @@ function PlasmicServiceFormFields__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "serviceTypeInput", "serviceKindInput", "descriptionInput"],
+  root: [
+    "root",
+    "serviceTypeInput",
+    "serviceDepartmentInput",
+    "descriptionInput"
+  ],
+
   serviceTypeInput: ["serviceTypeInput"],
-  serviceKindInput: ["serviceKindInput"],
+  serviceDepartmentInput: ["serviceDepartmentInput"],
   descriptionInput: ["descriptionInput"]
 };
 
@@ -102,7 +108,7 @@ export const PlasmicServiceFormFields = Object.assign(
   {
     // Helper components rendering sub-elements
     serviceTypeInput: makeNodeComponent("serviceTypeInput"),
-    serviceKindInput: makeNodeComponent("serviceKindInput"),
+    serviceDepartmentInput: makeNodeComponent("serviceDepartmentInput"),
     descriptionInput: makeNodeComponent("descriptionInput"),
     // Metadata about props expected for PlasmicServiceFormFields
     internalVariantProps: PlasmicServiceFormFields__VariantProps,

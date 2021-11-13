@@ -25,7 +25,7 @@
 .titleContainer__contentOnly {
   display: none;
 }
-.slotTitle {
+.slotTargetTitle {
   font-size: 18px;
   font-weight: 500;
   color: #0d0c22 /* plasmic-token: kBDGa6r9j */;

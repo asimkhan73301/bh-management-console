@@ -1,0 +1,112 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+.text___6XKfn {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  color: #061d7b /* plasmic-token: HNlv0A0HQ */;
+}
+.table:global(.__wab_instance) {
+  position: relative;
+}
+.tableRow__brqUe:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__fTcN:global(.__wab_instance) {
+  position: relative;
+}
+.text__sDa2G {
+  height: auto;
+  width: auto;
+  display: inline-block;
+}
+.tableCell__pQgKh:global(.__wab_instance) {
+  position: relative;
+}
+.text__meAs {
+  height: auto;
+}
+.tableCell__x98Qe:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__ohR37:global(.__wab_instance) {
+  position: relative;
+}
+.tableRow__hDuhR:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__rfeGd:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__lcuhY:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__nkqMx:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__ifO:global(.__wab_instance) {
+  position: relative;
+}
+.text__bTSsw {
+  width: auto;
+  display: inline-block;
+}
+.tableRow__mfV12:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__w8VQq:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__ix4V1:global(.__wab_instance) {
+  position: relative;
+}
+.text___96PZb {
+  height: auto;
+}
+.tableCell___7BxPn:global(.__wab_instance) {
+  position: relative;
+}
+.text__l2UE {
+  width: auto;
+  display: inline-block;
+}
+.tableCell__rE3RB:global(.__wab_instance) {
+  position: relative;
+}
+.text__l0Yv3 {
+  width: auto;
+  display: inline-block;
+}
+.tableRow__hyBw:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell___0Xl62:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__ffvnO:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__rJg9D:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__fsQYw:global(.__wab_instance) {
+  position: relative;
+}
+.text__aIuyw {
+  width: auto;
+  display: inline-block;
+}

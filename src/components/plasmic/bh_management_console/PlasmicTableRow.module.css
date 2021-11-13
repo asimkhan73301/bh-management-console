@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+.tableCell__cpsn:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__meZs9:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__ua29M:global(.__wab_instance) {
+  position: relative;
+}

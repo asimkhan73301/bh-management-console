@@ -46,6 +46,7 @@ function PlasmicFleetForm__RenderFunc(props) {
             className={classNames("__wab_instance", sty.fleetFormFields)}
           />
         }
+        redirectOnSubmitLink={"/requests"}
         title={"Add Fleet"}
       />
     </div>

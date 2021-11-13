@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
+  min-width: 0;
   margin-top: calc(0px - 16px);
   height: calc(100% + 16px);
 }
@@ -18,7 +19,7 @@
 .root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-top: 16px;
 }
-.serviceKindInput:global(.__wab_instance) {
+.serviceDepartmentInput:global(.__wab_instance) {
   position: relative;
 }
 .descriptionInput:global(.__wab_instance) {

@@ -149,10 +149,10 @@ function PlasmicCheckbox__RenderFunc(props) {
           {p.renderPlasmicSlot({
             defaultContents: "Enter some text",
             value: args.children,
-            className: classNames(sty.slotChildren, {
-              [sty.slotChildren_____focusVisibleWithin]:
+            className: classNames(sty.slotTargetChildren, {
+              [sty.slotTargetChildren_____focusVisibleWithin]:
                 triggers.focusVisibleWithin_root,
-              [sty.slotChildren__noLabel]: hasVariant(
+              [sty.slotTargetChildren__noLabel]: hasVariant(
                 variants,
                 "noLabel",
                 "noLabel"

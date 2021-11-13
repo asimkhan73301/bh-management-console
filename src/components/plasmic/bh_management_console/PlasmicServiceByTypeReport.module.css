@@ -1,0 +1,71 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+.text__srrof {
+  position: relative;
+  color: #061d7b /* plasmic-token: HNlv0A0HQ */;
+  font-weight: 500;
+  font-size: 16px;
+}
+.table:global(.__wab_instance) {
+  position: relative;
+}
+.tableRow__owc8G:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__q5Tdx:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__sNxa:global(.__wab_instance) {
+  position: relative;
+}
+.tableRow__tIcLa:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__e98I5:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell___8Qkv5:global(.__wab_instance) {
+  position: relative;
+}
+.tableRow__cbro:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__nrFcz:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell___0IIzH:global(.__wab_instance) {
+  position: relative;
+}
+.text__ipq3 {
+  width: auto;
+  display: inline-block;
+}
+.tableRow__lUpPm:global(.__wab_instance) {
+  position: relative;
+}
+.tableCell__rcBni:global(.__wab_instance) {
+  position: relative;
+}
+.text__lQp8V {
+  height: auto;
+}
+.tableCell__mzGP:global(.__wab_instance) {
+  position: relative;
+}
+.text__wpwT2 {
+  height: auto;
+}

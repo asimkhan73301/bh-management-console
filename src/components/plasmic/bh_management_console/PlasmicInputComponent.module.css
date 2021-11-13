@@ -8,6 +8,7 @@
 }
 .root > :global(.__wab_flex-container) {
   flex-direction: column;
+  min-width: 0;
   margin-top: calc(0px - 8px);
   height: calc(100% + 8px);
 }
@@ -24,7 +25,10 @@
   align-items: stretch;
   justify-content: flex-start;
 }
-.slotLabel {
+.labelContainer__noLabel {
+  display: none;
+}
+.slotTargetLabel {
   color: #0d0c22 /* plasmic-token: kBDGa6r9j */;
   font-weight: 700;
 }
@@ -55,6 +59,15 @@
 .textInput__type_time:global(.__wab_instance) {
   display: none;
 }
+.textInput__type_dateRange:global(.__wab_instance) {
+  display: none;
+}
+.svg__jrrRo {
+  position: relative;
+  object-fit: cover;
+  width: 18px;
+  height: 18px;
+}
 .multiLineTextInput:global(.__wab_instance) {
   position: relative;
   display: none;
@@ -67,6 +80,12 @@
 }
 .selectInput:global(.__wab_instance) {
   position: relative;
+}
+.svg__ytNgq {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
 }
 .checkboxGroup:global(.__wab_instance) {
   position: relative;
@@ -94,4 +113,15 @@
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
+}
+.dateRangeInputWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.dateRangeInputWrapper__type_dateRange {
+  width: 100%;
+  min-width: 0;
 }

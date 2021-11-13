@@ -56,17 +56,22 @@ function PlasmicButton__RenderFunc(props) {
         {p.renderPlasmicSlot({
           defaultContents: "Click Me",
           value: args.text,
-          className: classNames(sty.slotText, {
-            [sty.slotText__rounded]: hasVariant(variants, "rounded", "rounded"),
-            [sty.slotText__size_sm]: hasVariant(variants, "size", "sm"),
-            [sty.slotText__size_xs]: hasVariant(variants, "size", "xs"),
-            [sty.slotText__type_primary]: hasVariant(
+          className: classNames(sty.slotTargetText, {
+            [sty.slotTargetText__rounded]: hasVariant(
+              variants,
+              "rounded",
+              "rounded"
+            ),
+
+            [sty.slotTargetText__size_sm]: hasVariant(variants, "size", "sm"),
+            [sty.slotTargetText__size_xs]: hasVariant(variants, "size", "xs"),
+            [sty.slotTargetText__type_primary]: hasVariant(
               variants,
               "type",
               "primary"
             ),
 
-            [sty.slotText__type_secondary]: hasVariant(
+            [sty.slotTargetText__type_secondary]: hasVariant(
               variants,
               "type",
               "secondary"

@@ -38,6 +38,7 @@ function PlasmicServiceForm__RenderFunc(props) {
         data-plasmic-name={"genericFormComponent"}
         data-plasmic-override={overrides.genericFormComponent}
         className={classNames("__wab_instance", sty.genericFormComponent)}
+        redirectOnSubmitLink={"/requests"}
       />
     </div>
   );
